@@ -1,8 +1,8 @@
 import os
 import json
 from scoring import calculateScore
-from api import getGeneralData, getMapData, submit
-from data_keys import (
+from src.api import getGeneralData, getMapData, submit
+from src.data_keys import (
     MapNames as MN,
     LocationKeys as LK,
     ScoringKeys as SK,
@@ -63,12 +63,12 @@ def main():
         ##Get map data from Considition endpoint
         mapEntity = getMapData(mapName, apiKey)
 
-        with open(f"map_data/{mapName}.json", "w", encoding="utf8") as f:
+        with open(f"data/{mapName}.json", "w", encoding="utf8") as f:
             json.dump(mapEntity, f, indent=4)
 
         ##Get non map specific data from Considition endpoint
         generalData = getGeneralData()
-        with open("map_data/general.json", "w", encoding="utf8") as f:
+        with open("data/general.json", "w", encoding="utf8") as f:
             json.dump(generalData, f, indent=4)
 
         if mapEntity and generalData:
@@ -94,20 +94,22 @@ def main():
 
             id_ = score[SK.gameId]
             print(f"Storing  game with id {id_}.")
-            print(f"Enter {id_} into visualization.ipynb for local vizualization ")
+            print(f"Score: {score[SK.gameScore][SK.total]}")
+
+            # print(f"Enter {id_} into visualization.ipynb for local vizualization ")
 
             # Store solution locally for visualization
-            with open(f"{game_folder}\{id_}.json", "w", encoding="utf8") as f:
-                json.dump(score, f, indent=4)
+            # with open(f"{game_folder}\{id_}.json", "w", encoding="utf8") as f:
+            #     json.dump(score, f, indent=4)
 
             # Submit and and get score from Considition app
-            print(f"Submitting solution to Considtion 2023 \n")
-
-            scoredSolution = submit(mapName, solution, apiKey)
-            if scoredSolution:
-                print("Successfully submitted game")
-                print(f"id: {scoredSolution[SK.gameId]}")
-                print(f"Score: {scoredSolution[SK.gameScore]}")
+            # print(f"Submitting solution to Considtion 2023 \n")
+            #
+            # scoredSolution = submit(mapName, solution, apiKey)
+            # if scoredSolution:
+            #     print("Successfully submitted game")
+            #     print(f"id: {scoredSolution[SK.gameId]}")
+            #     print(f"Score: {scoredSolution[SK.gameScore]}")
 
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 import requests
 import os
 from dotenv import load_dotenv
-from data_keys import (
+from src.data_keys import (
     ScoringKeys as SK,
 )
 

@@ -1,0 +1,64 @@
+{
+    "classicUnitData": {
+        "type": "classic",
+        "co2PerUnitInGrams": 570.0,
+        "profitPerUnit": 0.0
+    },
+    "refillUnitData": {
+        "type": "refill",
+        "co2PerUnitInGrams": 0.0,
+        "profitPerUnit": 130.0
+    },
+    "freestyle9100Data": {
+        "type": "freestyle9100",
+        "leasingCostPerWeek": 1038.0,
+        "refillCapacityPerWeek": 438.0,
+        "staticCo2": 6330.0
+    },
+    "freestyle3100Data": {
+        "type": "freestyle3100",
+        "leasingCostPerWeek": 598.0,
+        "refillCapacityPerWeek": 70.0,
+        "staticCo2": 2110.0
+    },
+    "locationTypes": {
+        "groceryStoreLarge": {
+            "type": "Grocery-store-large",
+            "salesVolume": 373.0
+        },
+        "groceryStore": {
+            "type": "Grocery-store",
+            "salesVolume": 121.0
+        },
+        "convenience": {
+            "type": "Convenience",
+            "salesVolume": 15.0
+        },
+        "gasStation": {
+            "type": "Gas-station",
+            "salesVolume": 24.0
+        },
+        "kiosk": {
+            "type": "Kiosk",
+            "salesVolume": 3.0
+        }
+    },
+    "competitionMapNames": [
+        "stockholm",
+        "orebro",
+        "malmo",
+        "london",
+        "berlin"
+    ],
+    "trainingMapNames": [
+        "goteborg",
+        "uppsala",
+        "linkoping",
+        "vasteras"
+    ],
+    "co2PricePerKiloInSek": 1.06,
+    "willingnessToTravelInMeters": 150.0,
+    "constantExpDistributionFunction": 1.03,
+    "refillSalesFactor": 0.43,
+    "refillDistributionRate": 0.5
+}

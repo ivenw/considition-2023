@@ -1,0 +1,3418 @@
+{
+    "mapName": "linkoping",
+    "border": {
+        "latitudeMax": 58.4369439,
+        "latitudeMin": 58.386681,
+        "longitudeMax": 15.6625755,
+        "longitudeMin": 15.5092199
+    },
+    "locations": {
+        "location1": {
+            "locationName": "location1",
+            "locationType": "Gas-station",
+            "latitude": 58.4369439,
+            "longitude": 15.6512949,
+            "footfall": 0.0,
+            "footfallScale": 0,
+            "salesVolume": 24.0
+        },
+        "location2": {
+            "locationName": "location2",
+            "locationType": "Grocery-store",
+            "latitude": 58.3882479,
+            "longitude": 15.5652542,
+            "footfall": 0.00828456390651419,
+            "footfallScale": 1,
+            "salesVolume": 121.0
+        },
+        "location3": {
+            "locationName": "location3",
+            "locationType": "Grocery-store",
+            "latitude": 58.41507,
+            "longitude": 15.609358,
+            "footfall": 0.03988709338654935,
+            "footfallScale": 1,
+            "salesVolume": 121.0
+        },
+        "location4": {
+            "locationName": "location4",
+            "locationType": "Grocery-store",
+            "latitude": 58.4355162,
+            "longitude": 15.5891443,
+            "footfall": 0.08239581661811354,
+            "footfallScale": 1,
+            "salesVolume": 121.0
+        },
+        "location5": {
+            "locationName": "location5",
+            "locationType": "Kiosk",
+            "latitude": 58.4068696,
+            "longitude": 15.5787502,
+            "footfall": 0.0,
+            "footfallScale": 0,
+            "salesVolume": 3.0
+        },
+        "location6": {
+            "locationName": "location6",
+            "locationType": "Kiosk",
+            "latitude": 58.4056838,
+            "longitude": 15.606961,
+            "footfall": 0.0,
+            "footfallScale": 0,
+            "salesVolume": 3.0
+        },
+        "location7": {
+            "locationName": "location7",
+            "locationType": "Grocery-store",
+            "latitude": 58.405866,
+            "longitude": 15.6421547,
+            "footfall": 0.11652423908959222,
+            "footfallScale": 1,
+            "salesVolume": 121.0
+        },
+        "location8": {
+            "locationName": "location8",
+            "locationType": "Kiosk",
+            "latitude": 58.4042401,
+            "longitude": 15.6448098,
+            "footfall": 0.1104549649474666,
+            "footfallScale": 1,
+            "salesVolume": 3.0
+        },
+        "location9": {
+            "locationName": "location9",
+            "locationType": "Kiosk",
+            "latitude": 58.3964622,
+            "longitude": 15.5780302,
+            "footfall": 0.1731255346653427,
+            "footfallScale": 2,
+            "salesVolume": 3.0
+        },
+        "location10": {
+            "locationName": "location10",
+            "locationType": "Grocery-store",
+            "latitude": 58.4090315,
+            "longitude": 15.6257076,
+            "footfall": 0.22173206236364093,
+            "footfallScale": 3,
+            "salesVolume": 121.0
+        },
+        "location11": {
+            "locationName": "location11",
+            "locationType": "Kiosk",
+            "latitude": 58.4275,
+            "longitude": 15.5826171,
+            "footfall": 0.05398890130698817,
+            "footfallScale": 1,
+            "salesVolume": 3.0
+        },
+        "location12": {
+            "locationName": "location12",
+            "locationType": "Kiosk",
+            "latitude": 58.3880256,
+            "longitude": 15.56539,
+            "footfall": 0.0,
+            "footfallScale": 0,
+            "salesVolume": 3.0
+        },
+        "location13": {
+            "locationName": "location13",
+            "locationType": "Grocery-store",
+            "latitude": 58.3922933,
+            "longitude": 15.6434628,
+            "footfall": 0.11634466149425493,
+            "footfallScale": 1,
+            "salesVolume": 121.0
+        },
+        "location14": {
+            "locationName": "location14",
+            "locationType": "Kiosk",
+            "latitude": 58.3980966,
+            "longitude": 15.6619513,
+            "footfall": 0.0077645261195866235,
+            "footfallScale": 1,
+            "salesVolume": 3.0
+        },
+        "location15": {
+            "locationName": "location15",
+            "locationType": "Grocery-store",
+            "latitude": 58.395637,
+            "longitude": 15.6624149,
+            "footfall": 0.08069630071399977,
+            "footfallScale": 1,
+            "salesVolume": 121.0
+        },
+        "location16": {
+            "locationName": "location16",
+            "locationType": "Kiosk",
+            "latitude": 58.3954566,
+            "longitude": 15.6625755,
+            "footfall": 0.06984229952551528,
+            "footfallScale": 1,
+            "salesVolume": 3.0
+        },
+        "location17": {
+            "locationName": "location17",
+            "locationType": "Kiosk",
+            "latitude": 58.420276,
+            "longitude": 15.5092199,
+            "footfall": 0.04655820717526564,
+            "footfallScale": 1,
+            "salesVolume": 3.0
+        },
+        "location18": {
+            "locationName": "location18",
+            "locationType": "Convenience",
+            "latitude": 58.4083177,
+            "longitude": 15.563256,
+            "footfall": 0.08568227098709452,
+            "footfallScale": 1,
+            "salesVolume": 15.0
+        },
+        "location19": {
+            "locationName": "location19",
+            "locationType": "Grocery-store",
+            "latitude": 58.4064932,
+            "longitude": 15.6171644,
+            "footfall": 0.03704520225602446,
+            "footfallScale": 1,
+            "salesVolume": 121.0
+        },
+        "location20": {
+            "locationName": "location20",
+            "locationType": "Kiosk",
+            "latitude": 58.4008141,
+            "longitude": 15.5783445,
+            "footfall": 0.06173801648004307,
+            "footfallScale": 1,
+            "salesVolume": 3.0
+        },
+        "location21": {
+            "locationName": "location21",
+            "locationType": "Grocery-store",
+            "latitude": 58.386681,
+            "longitude": 15.5884824,
+            "footfall": 0.005361509151321461,
+            "footfallScale": 1,
+            "salesVolume": 121.0
+        },
+        "location22": {
+            "locationName": "location22",
+            "locationType": "Kiosk",
+            "latitude": 58.4104557,
+            "longitude": 15.6222254,
+            "footfall": 0.28714845913962106,
+            "footfallScale": 4,
+            "salesVolume": 3.0
+        },
+        "location23": {
+            "locationName": "location23",
+            "locationType": "Kiosk",
+            "latitude": 58.4104312,
+            "longitude": 15.6364937,
+            "footfall": 0.07301597732615203,
+            "footfallScale": 1,
+            "salesVolume": 3.0
+        },
+        "location24": {
+            "locationName": "location24",
+            "locationType": "Kiosk",
+            "latitude": 58.3973339,
+            "longitude": 15.6383601,
+            "footfall": 0.11733540871460302,
+            "footfallScale": 1,
+            "salesVolume": 3.0
+        },
+        "location25": {
+            "locationName": "location25",
+            "locationType": "Kiosk",
+            "latitude": 58.4268961,
+            "longitude": 15.5815771,
+            "footfall": 0.04758606738783261,
+            "footfallScale": 1,
+            "salesVolume": 3.0
+        },
+        "location26": {
+            "locationName": "location26",
+            "locationType": "Grocery-store",
+            "latitude": 58.4266364,
+            "longitude": 15.5798714,
+            "footfall": 0.01141227703084357,
+            "footfallScale": 1,
+            "salesVolume": 121.0
+        },
+        "location27": {
+            "locationName": "location27",
+            "locationType": "Grocery-store",
+            "latitude": 58.4132,
+            "longitude": 15.6025218,
+            "footfall": 0.04284903868361309,
+            "footfallScale": 1,
+            "salesVolume": 121.0
+        },
+        "location28": {
+            "locationName": "location28",
+            "locationType": "Grocery-store",
+            "latitude": 58.411171,
+            "longitude": 15.6270333,
+            "footfall": 0.13265283727044877,
+            "footfallScale": 2,
+            "salesVolume": 121.0
+        },
+        "location29": {
+            "locationName": "location29",
+            "locationType": "Kiosk",
+            "latitude": 58.4017423,
+            "longitude": 15.6209466,
+            "footfall": 0.03680668847428334,
+            "footfallScale": 1,
+            "salesVolume": 3.0
+        },
+        "location30": {
+            "locationName": "location30",
+            "locationType": "Convenience",
+            "latitude": 58.4013553,
+            "longitude": 15.6206573,
+            "footfall": 0.008352455052809522,
+            "footfallScale": 1,
+            "salesVolume": 15.0
+        },
+        "location31": {
+            "locationName": "location31",
+            "locationType": "Kiosk",
+            "latitude": 58.4160348,
+            "longitude": 15.6260601,
+            "footfall": 0.632580767046453,
+            "footfallScale": 10,
+            "salesVolume": 3.0
+        },
+        "location32": {
+            "locationName": "location32",
+            "locationType": "Kiosk",
+            "latitude": 58.4115107,
+            "longitude": 15.6206729,
+            "footfall": 0.2007450341423717,
+            "footfallScale": 3,
+            "salesVolume": 3.0
+        },
+        "location33": {
+            "locationName": "location33",
+            "locationType": "Grocery-store",
+            "latitude": 58.4341884,
+            "longitude": 15.589721,
+            "footfall": 0.12374209538922025,
+            "footfallScale": 1,
+            "salesVolume": 121.0
+        },
+        "location34": {
+            "locationName": "location34",
+            "locationType": "Gas-station",
+            "latitude": 58.4327171,
+            "longitude": 15.5828637,
+            "footfall": 0.02137961104069206,
+            "footfallScale": 1,
+            "salesVolume": 24.0
+        },
+        "location35": {
+            "locationName": "location35",
+            "locationType": "Gas-station",
+            "latitude": 58.4309589,
+            "longitude": 15.5840315,
+            "footfall": 0.06361915716841647,
+            "footfallScale": 1,
+            "salesVolume": 24.0
+        },
+        "location36": {
+            "locationName": "location36",
+            "locationType": "Gas-station",
+            "latitude": 58.4059169,
+            "longitude": 15.5597643,
+            "footfall": 0.0937693983077832,
+            "footfallScale": 1,
+            "salesVolume": 24.0
+        },
+        "location37": {
+            "locationName": "location37",
+            "locationType": "Gas-station",
+            "latitude": 58.3992492,
+            "longitude": 15.6528489,
+            "footfall": 0.013941184473469509,
+            "footfallScale": 1,
+            "salesVolume": 24.0
+        },
+        "location38": {
+            "locationName": "location38",
+            "locationType": "Gas-station",
+            "latitude": 58.4327264,
+            "longitude": 15.582952,
+            "footfall": 0.023125205150772644,
+            "footfallScale": 1,
+            "salesVolume": 24.0
+        },
+        "location39": {
+            "locationName": "location39",
+            "locationType": "Gas-station",
+            "latitude": 58.4322414,
+            "longitude": 15.5829798,
+            "footfall": 0.017353470418276274,
+            "footfallScale": 1,
+            "salesVolume": 24.0
+        }
+    },
+    "hotspots": [
+        {
+            "spread": 300.0,
+            "name": "flygvapenmuseum",
+            "latitude": 58.41013377151236,
+            "longitude": 15.524023709709745,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "gamla-linkoping",
+            "latitude": 58.40543841765903,
+            "longitude": 15.588901588274295,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "linkopings-domkyrka",
+            "latitude": 58.41122311446181,
+            "longitude": 15.617306036695371,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "tradgardsforeningen",
+            "latitude": 58.40803770574433,
+            "longitude": 15.620732926902729,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "linkoping-naturcentrum",
+            "latitude": 58.40469327956647,
+            "longitude": 15.618699866499062,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "kinda-kanal",
+            "latitude": 58.413828262158745,
+            "longitude": 15.631668848126795,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "slotts-domkyrkomuseum",
+            "latitude": 58.41082703572272,
+            "longitude": 15.615657292516698,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "linkopings-stadsbibliotek",
+            "latitude": 58.41191470670695,
+            "longitude": 15.61204904887979,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "lilla-valla-lekpark",
+            "latitude": 58.39900201271527,
+            "longitude": 15.583723036694707,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "sankt-lars-kyrka",
+            "latitude": 58.41142019382257,
+            "longitude": 15.624991809709806,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "vallastaden",
+            "latitude": 58.3929605362014,
+            "longitude": 15.582592671125939,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "linkoping-universitet",
+            "latitude": 58.39727864470618,
+            "longitude": 15.574910824739701,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "stora-torget",
+            "latitude": 58.410807195396686,
+            "longitude": 15.621380096758777,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "ostergotlands-museum",
+            "latitude": 58.41385122716218,
+            "longitude": 15.616275097152547,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "ikea-linkoping",
+            "latitude": 58.43323487810778,
+            "longitude": 15.58679302505386,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "jonn-o-nilssons-plan",
+            "latitude": 58.394148687646016,
+            "longitude": 15.696344861288193,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "studenthuset",
+            "latitude": 58.397115007797595,
+            "longitude": 15.578749519285347,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "gamla-linkoping",
+            "latitude": 58.406300077705964,
+            "longitude": 15.588180138083096,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "gyllenhuset",
+            "latitude": 58.41023345956907,
+            "longitude": 15.626193992787547,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "linkoping-simhall",
+            "latitude": 58.40565152846395,
+            "longitude": 15.63093332407228,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "metamorfos",
+            "latitude": 58.41524789351167,
+            "longitude": 15.624897788816611,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "linkoping-city-hall",
+            "latitude": 58.410138996344095,
+            "longitude": 15.617540496018117,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "taeterns-hus",
+            "latitude": 58.414150711489576,
+            "longitude": 15.62747606586211,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "centralpalatset",
+            "latitude": 59.328725889238484,
+            "longitude": 18.063088767429836,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "gamla-radhuset",
+            "latitude": 58.50338135868956,
+            "longitude": 13.15700169622184,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "linkoping-konsert-kongress",
+            "latitude": 58.41412451260585,
+            "longitude": 15.614431049210745,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "lassemajas-deckarhus",
+            "latitude": 58.405306063673684,
+            "longitude": 15.588428972931387,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "saab-arena",
+            "latitude": 58.41727283972723,
+            "longitude": 15.636034163751507,
+            "footfall": 1.0
+        },
+        {
+            "spread": 200.0,
+            "name": "anders ljungstedts gymnasium",
+            "latitude": 58.415078,
+            "longitude": 15.6377601,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "hagalundsv\u00e3\u00a4gen",
+            "latitude": 58.4180261,
+            "longitude": 15.6542474,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "majelden",
+            "latitude": 58.3972256,
+            "longitude": 15.638831,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "middagsgatan",
+            "latitude": 58.3742571,
+            "longitude": 15.660191,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "isberget",
+            "latitude": 58.3898182,
+            "longitude": 15.5663946,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "bergsrondellen",
+            "latitude": 58.4189714,
+            "longitude": 15.5982843,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "s\u00e3\u00b6rg\u00e3\u00a5rdsgatan",
+            "latitude": 58.4222964,
+            "longitude": 15.5757279,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "norra tornby",
+            "latitude": 58.4346817,
+            "longitude": 15.5885107,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tv\u00e3\u00a4ttlappen",
+            "latitude": 58.4246012,
+            "longitude": 15.5959843,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "m\u00e3\u00a5rdtorpsgatan",
+            "latitude": 58.4066571,
+            "longitude": 15.5598083,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "bj\u00e3\u00b6rnk\u00e3\u00a4rrsskolan",
+            "latitude": 58.4145305,
+            "longitude": 15.5650588,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "rydsv\u00e3\u00a4gens \u00e3\u00a4ndh\u00e3\u00a5llplats",
+            "latitude": 58.414238,
+            "longitude": 15.5710077,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "v\u00e3\u00a4r\u00e3\u00b6",
+            "latitude": 58.4244962,
+            "longitude": 15.5322176,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "k\u00e3\u00a4rna kors",
+            "latitude": 58.414225,
+            "longitude": 15.5198316,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tokarps skola",
+            "latitude": 58.4246438,
+            "longitude": 15.5077693,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "hemmansgatan",
+            "latitude": 58.3817167,
+            "longitude": 15.5785164,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "k\u00e3\u00a4lltorpsv\u00e3\u00a4gen",
+            "latitude": 58.361767,
+            "longitude": 15.5623504,
+            "footfall": 0.7
+        },
+        {
+            "spread": 300.0,
+            "name": "link\u00e3\u00b6ping c",
+            "latitude": 58.4162096,
+            "longitude": 15.6261724,
+            "footfall": 1.0
+        },
+        {
+            "spread": 200.0,
+            "name": "saab s\u00e3\u00b6dra",
+            "latitude": 58.400688,
+            "longitude": 15.657577,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "kattfotstigen",
+            "latitude": 58.38635,
+            "longitude": 15.6696536,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "l\u00e3\u00b6vsbergsv\u00e3\u00a4gen",
+            "latitude": 58.3735533,
+            "longitude": 15.6944291,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "link\u00e3\u00b6ping arena",
+            "latitude": 58.4166369,
+            "longitude": 15.6505946,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "kattfotstigen",
+            "latitude": 58.3861366,
+            "longitude": 15.6681025,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "lektorshagen",
+            "latitude": 58.41223,
+            "longitude": 15.5974598,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "staby bro",
+            "latitude": 58.4331295,
+            "longitude": 15.683105,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "gullringsv\u00e3\u00a4gen",
+            "latitude": 58.4288565,
+            "longitude": 15.6765215,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "kristinebergsgatan",
+            "latitude": 58.4013125,
+            "longitude": 15.6373355,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "djurg\u00e3\u00a5rden",
+            "latitude": 58.3931865,
+            "longitude": 15.6074075,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "v\u00e3\u00a5rdsbergsv\u00e3\u00a4gen",
+            "latitude": 58.374197,
+            "longitude": 15.7094288,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "johannelunds centrum",
+            "latitude": 58.395892,
+            "longitude": 15.6613492,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tenndosan",
+            "latitude": 58.3930156,
+            "longitude": 15.6618607,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "\u00e3\u2013vre johannelund",
+            "latitude": 58.3922768,
+            "longitude": 15.6652033,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "parkgatan",
+            "latitude": 58.4078693,
+            "longitude": 15.6010282,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "parkgatan",
+            "latitude": 58.4079789,
+            "longitude": 15.6029222,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "skrivaregatan",
+            "latitude": 58.4325415,
+            "longitude": 15.57021,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "vallastadens skola",
+            "latitude": 58.3926333,
+            "longitude": 15.5896949,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "stigl\u00e3\u00b6tsgatan",
+            "latitude": 58.4267525,
+            "longitude": 15.568636,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "fogdegatan",
+            "latitude": 58.4296624,
+            "longitude": 15.5676108,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "skrivaregatan",
+            "latitude": 58.4326833,
+            "longitude": 15.5710091,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "skatteg\u00e3\u00a5rden",
+            "latitude": 58.4328979,
+            "longitude": 15.5770129,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ullevi",
+            "latitude": 58.4300049,
+            "longitude": 15.5847748,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tegskiftesgatan",
+            "latitude": 58.3836531,
+            "longitude": 15.5570101,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "\u00e3\u201engg\u00e3\u00a5rdsskolan",
+            "latitude": 58.3800425,
+            "longitude": 15.5717487,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "\u00e3\u201engg\u00e3\u00a5rdsskolan",
+            "latitude": 58.380504,
+            "longitude": 15.5712785,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "bost\u00e3\u00a4llsgatan",
+            "latitude": 58.3829507,
+            "longitude": 15.5718509,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "garnisonen s\u00e3\u00b6dra",
+            "latitude": 58.3935427,
+            "longitude": 15.6160184,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tinnerb\u00e3\u00a4cksgr\u00e3\u00a4nd",
+            "latitude": 58.3963733,
+            "longitude": 15.6213582,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "rotegatan",
+            "latitude": 58.3914984,
+            "longitude": 15.6251469,
+            "footfall": 0.7
+        },
+        {
+            "spread": 300.0,
+            "name": "tannefors",
+            "latitude": 58.4004122,
+            "longitude": 15.6602121,
+            "footfall": 1.0
+        },
+        {
+            "spread": 200.0,
+            "name": "us s\u00e3\u00b6dra entr\u00e3\u00a9n",
+            "latitude": 58.3996353,
+            "longitude": 15.6201398,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "kvinnebystigen",
+            "latitude": 58.3783955,
+            "longitude": 15.6938336,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "mellang\u00e3\u00a5rden",
+            "latitude": 58.4233835,
+            "longitude": 15.5914972,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ekholmens v\u00e3\u00a5rdcentral",
+            "latitude": 58.3781988,
+            "longitude": 15.6806165,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ekholmsskolan",
+            "latitude": 58.3778461,
+            "longitude": 15.6781736,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "j\u00e3\u00a4rdalav\u00e3\u00a4gen 50",
+            "latitude": 58.3830481,
+            "longitude": 15.6809239,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "j\u00e3\u00a4rdalav\u00e3\u00a4gen 50",
+            "latitude": 58.3838161,
+            "longitude": 15.6803311,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ekhaga",
+            "latitude": 58.3860457,
+            "longitude": 15.6767423,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "resecentrum",
+            "latitude": 58.4169619,
+            "longitude": 15.623998,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "resedan",
+            "latitude": 58.3850985,
+            "longitude": 15.658208,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "bergdalsgatan",
+            "latitude": 58.4024455,
+            "longitude": 15.6339999,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "munkhagsgatan 74",
+            "latitude": 58.3974883,
+            "longitude": 15.6664632,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "sp\u00e3\u00a5ngerum",
+            "latitude": 58.3957416,
+            "longitude": 15.6716145,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "vickergatan",
+            "latitude": 58.4031879,
+            "longitude": 15.5939353,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "slaka kyrka",
+            "latitude": 58.370832,
+            "longitude": 15.5568323,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "slaka skola",
+            "latitude": 58.3694328,
+            "longitude": 15.5568304,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "slaka skola",
+            "latitude": 58.3672125,
+            "longitude": 15.5582492,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "pilspetsv\u00e3\u00a4gen",
+            "latitude": 58.3656294,
+            "longitude": 15.5569892,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "pilspetsv\u00e3\u00a4gen",
+            "latitude": 58.3653851,
+            "longitude": 15.5562839,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "h\u00e3\u00b6gs\u00e3\u00a4tersv\u00e3\u00a4gen",
+            "latitude": 58.3650633,
+            "longitude": 15.5599479,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "sk\u00e3\u00a4ggetorp centrum",
+            "latitude": 58.4270886,
+            "longitude": 15.5826138,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "l\u00e3\u00a4nsstyrelsen",
+            "latitude": 58.4108463,
+            "longitude": 15.6111716,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "f\u00e3\u00b6nvindsv\u00e3\u00a4gen \u00e3\u00b6stra",
+            "latitude": 58.433015,
+            "longitude": 15.7000526,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "f\u00e3\u00b6nvindsv\u00e3\u00a4gen v\u00e3\u00a4stra",
+            "latitude": 58.4330601,
+            "longitude": 15.6964545,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "lillg\u00e3\u00a5rdsgatan",
+            "latitude": 58.3899681,
+            "longitude": 15.6456569,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "grindgatan",
+            "latitude": 58.3785639,
+            "longitude": 15.6609578,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "h\u00e3\u00a4sslegatan",
+            "latitude": 58.3753317,
+            "longitude": 15.6423468,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "\u00e3\u2026leryds sjukhem",
+            "latitude": 58.3823213,
+            "longitude": 15.6629025,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "hackefors s\u00e3\u00b6dra",
+            "latitude": 58.3925847,
+            "longitude": 15.7035454,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "fmv",
+            "latitude": 58.3951326,
+            "longitude": 15.5086211,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "kvinnebystigen",
+            "latitude": 58.3781237,
+            "longitude": 15.6947081,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "aspeliden",
+            "latitude": 58.3799285,
+            "longitude": 15.6990116,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "aspeliden",
+            "latitude": 58.3802377,
+            "longitude": 15.6997921,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "strand\u00e3\u00a4ngsv\u00e3\u00a4gen",
+            "latitude": 58.3780539,
+            "longitude": 15.704588,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ekdalsv\u00e3\u00a4gen",
+            "latitude": 58.3734443,
+            "longitude": 15.7020129,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "als\u00e3\u00a4ttersgatan",
+            "latitude": 58.4133899,
+            "longitude": 15.5613571,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "f\u00e3\u00a5rsaxv\u00e3\u00a4gen",
+            "latitude": 58.4204105,
+            "longitude": 15.5126188,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "f\u00e3\u00a5rbetesv\u00e3\u00a4gen",
+            "latitude": 58.4214874,
+            "longitude": 15.5068904,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "klarinettgatan",
+            "latitude": 58.3635194,
+            "longitude": 15.6830549,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "aspn\u00e3\u00a4set",
+            "latitude": 58.3726507,
+            "longitude": 15.685105,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "st\u00e3\u00a5ngebro",
+            "latitude": 58.4162687,
+            "longitude": 15.6372197,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "hackefors",
+            "latitude": 58.3954017,
+            "longitude": 15.699056,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "nedre johannelund",
+            "latitude": 58.3935809,
+            "longitude": 15.6708614,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "saab civila porten",
+            "latitude": 58.4010515,
+            "longitude": 15.6749275,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tegskiftesgatan",
+            "latitude": 58.3846275,
+            "longitude": 15.5549157,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "lagerlunda all\u00e3\u00a9",
+            "latitude": 58.3915374,
+            "longitude": 15.4910912,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "fr\u00e3\u00b6ssle",
+            "latitude": 58.3929482,
+            "longitude": 15.4986649,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "l\u00e3\u00a4gergatan",
+            "latitude": 58.4083417,
+            "longitude": 15.5173297,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "id\u00e3\u00b6gatan",
+            "latitude": 58.4237905,
+            "longitude": 15.6786696,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "folkungavallen",
+            "latitude": 58.4028768,
+            "longitude": 15.631686,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tornhagen",
+            "latitude": 58.41199,
+            "longitude": 15.5892934,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "sidvindsv\u00e3\u00a4gen",
+            "latitude": 58.4342478,
+            "longitude": 15.6894423,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "barnhemsgatan",
+            "latitude": 58.4089244,
+            "longitude": 15.6120652,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "fj\u00e3\u00a4rrbussterminalen",
+            "latitude": 58.4191641,
+            "longitude": 15.6192501,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "n\u00e3\u00a4sby all\u00e3\u00a9",
+            "latitude": 58.4520856,
+            "longitude": 15.6433486,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "pionj\u00e3\u00a4rgatan",
+            "latitude": 58.3913448,
+            "longitude": 15.6330526,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "malmskogen",
+            "latitude": 58.4285194,
+            "longitude": 15.7057813,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tallboda centrum",
+            "latitude": 58.425917,
+            "longitude": 15.6795121,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "sn\u00e3\u00b6v\u00e3\u00a4gen",
+            "latitude": 58.4265609,
+            "longitude": 15.6863413,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "kungsgatan",
+            "latitude": 58.412622,
+            "longitude": 15.6238651,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "k\u00e3\u00b6pmansgr\u00e3\u00a4nd",
+            "latitude": 58.408935,
+            "longitude": 15.6269866,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "kungsgatan",
+            "latitude": 58.413936,
+            "longitude": 15.6234081,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ullst\u00e3\u00a4mmav\u00e3\u00a4gen",
+            "latitude": 58.3717846,
+            "longitude": 15.6867345,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "saab s\u00e3\u00b6dra",
+            "latitude": 58.4005773,
+            "longitude": 15.658248,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "anders ljungstedts gymnasium",
+            "latitude": 58.4153699,
+            "longitude": 15.6400365,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "lilla bjursholmen",
+            "latitude": 58.4376744,
+            "longitude": 15.7573999,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "malmskogen",
+            "latitude": 58.4286355,
+            "longitude": 15.7074391,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "karlstorp",
+            "latitude": 58.4303727,
+            "longitude": 15.7229249,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "munkhagsgatan 74",
+            "latitude": 58.3975426,
+            "longitude": 15.6652385,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "risbrinksgatan",
+            "latitude": 58.3994715,
+            "longitude": 15.6462285,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "grindgatan",
+            "latitude": 58.3791445,
+            "longitude": 15.6606375,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "forskningsbyn",
+            "latitude": 58.3946582,
+            "longitude": 15.5660998,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "lagerlundav\u00e3\u00a4gen",
+            "latitude": 58.4076353,
+            "longitude": 15.5144597,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tinnerb\u00e3\u00a4cksbadet",
+            "latitude": 58.4052919,
+            "longitude": 15.6263952,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tinnerb\u00e3\u00a4cksbadet",
+            "latitude": 58.4048162,
+            "longitude": 15.6265661,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ekdalsv\u00e3\u00a4gen",
+            "latitude": 58.373403,
+            "longitude": 15.7041485,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tegskiftesgatan",
+            "latitude": 58.3835133,
+            "longitude": 15.5582256,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tegskiftesgatan",
+            "latitude": 58.3834946,
+            "longitude": 15.5583979,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ryd centrum",
+            "latitude": 58.4077523,
+            "longitude": 15.564995,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "korngatan",
+            "latitude": 58.412186,
+            "longitude": 15.641903,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "johannelunds centrum",
+            "latitude": 58.3957306,
+            "longitude": 15.6606879,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "\u00e3\u2013deg\u00e3\u00a5rdsgatan 11",
+            "latitude": 58.3971887,
+            "longitude": 15.6523956,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "\u00e3\u2013deg\u00e3\u00a5rdsgatan 11",
+            "latitude": 58.3972346,
+            "longitude": 15.6522422,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "k\u00e3\u00a4rna kors",
+            "latitude": 58.4142413,
+            "longitude": 15.5194655,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "lilla ullevi",
+            "latitude": 58.4297416,
+            "longitude": 15.5866953,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "regementsgatan",
+            "latitude": 58.3975764,
+            "longitude": 15.6169527,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ryd centrum",
+            "latitude": 58.4080479,
+            "longitude": 15.5635967,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "als\u00e3\u00a4ttersgatan",
+            "latitude": 58.4131216,
+            "longitude": 15.5600436,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ljunghagsv\u00e3\u00a4gen",
+            "latitude": 58.3864407,
+            "longitude": 15.7064032,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ljunghagsv\u00e3\u00a4gen",
+            "latitude": 58.386887,
+            "longitude": 15.7053061,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "v\u00e3\u00a5rg\u00e3\u00a5rd",
+            "latitude": 58.3889522,
+            "longitude": 15.7004697,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "v\u00e3\u00a5rg\u00e3\u00a5rd",
+            "latitude": 58.389735,
+            "longitude": 15.7001562,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "roshagsv\u00e3\u00a4gen",
+            "latitude": 58.3821388,
+            "longitude": 15.7112286,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "roshagsv\u00e3\u00a4gen",
+            "latitude": 58.3831607,
+            "longitude": 15.7108777,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "saab civila \u00e3\u2026tvidabergsv\u00e3\u00a4gen",
+            "latitude": 58.4002688,
+            "longitude": 15.6740006,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "saab norra porten",
+            "latitude": 58.4072676,
+            "longitude": 15.6540539,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "stationsgatan",
+            "latitude": 58.4019374,
+            "longitude": 15.6528566,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "saab norra porten",
+            "latitude": 58.4073502,
+            "longitude": 15.6539445,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "stationsgatan",
+            "latitude": 58.4020356,
+            "longitude": 15.6526602,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "g\u00e3\u00a4rdesgatan",
+            "latitude": 58.4125891,
+            "longitude": 15.603165,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "gamla link\u00e3\u00b6ping",
+            "latitude": 58.4071337,
+            "longitude": 15.5890999,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "gamla link\u00e3\u00b6ping",
+            "latitude": 58.407561,
+            "longitude": 15.5903691,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "gamla link\u00e3\u00b6ping",
+            "latitude": 58.4064445,
+            "longitude": 15.5908713,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "str\u00e3\u00a5gatan",
+            "latitude": 58.3734094,
+            "longitude": 15.6528939,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "morgongatan",
+            "latitude": 58.3735327,
+            "longitude": 15.6685786,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "norra tornby",
+            "latitude": 58.4348744,
+            "longitude": 15.58959,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "vallaplan",
+            "latitude": 58.4073958,
+            "longitude": 15.5964074,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "gamla link\u00e3\u00b6ping",
+            "latitude": 58.40706,
+            "longitude": 15.5893076,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "stationsgatan",
+            "latitude": 58.4021281,
+            "longitude": 15.6504222,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "vetegatan",
+            "latitude": 58.4064973,
+            "longitude": 15.6479661,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "forskningsbyn",
+            "latitude": 58.3942847,
+            "longitude": 15.5672231,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tornet",
+            "latitude": 58.4240419,
+            "longitude": 15.6155332,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tornet",
+            "latitude": 58.4250826,
+            "longitude": 15.6152069,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "malmen vakten",
+            "latitude": 58.3976369,
+            "longitude": 15.5075675,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "f\u00e3\u00a5gel\u00e3\u00b6gatan",
+            "latitude": 58.4180536,
+            "longitude": 15.6718149,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "harstenagatan",
+            "latitude": 58.4174167,
+            "longitude": 15.6655708,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "link\u00e3\u00b6ping arena",
+            "latitude": 58.416618,
+            "longitude": 15.6501209,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "drottningtorget",
+            "latitude": 58.4101448,
+            "longitude": 15.6346066,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "drottningtorget",
+            "latitude": 58.4097687,
+            "longitude": 15.6368751,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "masugnen",
+            "latitude": 58.4174205,
+            "longitude": 15.6593206,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "stora torget",
+            "latitude": 58.4106504,
+            "longitude": 15.6218964,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "barnhemsgatan",
+            "latitude": 58.4088179,
+            "longitude": 15.6131809,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tr\u00e3\u00a4dg\u00e3\u00a5rdstorget",
+            "latitude": 58.4094497,
+            "longitude": 15.6249302,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "stora torget",
+            "latitude": 58.4106006,
+            "longitude": 15.6214272,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "j\u00e3\u00a4garvallsv\u00e3\u00a4gen",
+            "latitude": 58.3958313,
+            "longitude": 15.5371547,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "berga s\u00e3\u00b6derleden",
+            "latitude": 58.3927919,
+            "longitude": 15.6459954,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "berga centrum",
+            "latitude": 58.3929347,
+            "longitude": 15.6438832,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "berga centrum",
+            "latitude": 58.3926634,
+            "longitude": 15.6423127,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "odalgatan",
+            "latitude": 58.3827282,
+            "longitude": 15.563824,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "skogsfrid",
+            "latitude": 58.404063,
+            "longitude": 15.5997173,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "byg\u00e3\u00a4rdesgatan",
+            "latitude": 58.3903164,
+            "longitude": 15.5614637,
+            "footfall": 0.7
+        },
+        {
+            "spread": 300.0,
+            "name": "link\u00e3\u00b6ping c",
+            "latitude": 58.4161788,
+            "longitude": 15.6261145,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "link\u00e3\u00b6ping c",
+            "latitude": 58.4162846,
+            "longitude": 15.6263347,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "link\u00e3\u00b6ping c",
+            "latitude": 58.4163109,
+            "longitude": 15.6263885,
+            "footfall": 1.0
+        },
+        {
+            "spread": 300.0,
+            "name": "link\u00e3\u00b6ping c",
+            "latitude": 58.4163791,
+            "longitude": 15.6265278,
+            "footfall": 1.0
+        },
+        {
+            "spread": 200.0,
+            "name": "ektunav\u00e3\u00a4gen",
+            "latitude": 58.3797964,
+            "longitude": 15.6881844,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "brokindsleden",
+            "latitude": 58.3785538,
+            "longitude": 15.6854975,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "\u00e3\u2013deg\u00e3\u00a5rdsgatan 24",
+            "latitude": 58.3965764,
+            "longitude": 15.6561301,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "\u00e3\u2013deg\u00e3\u00a5rdsgatan 24",
+            "latitude": 58.3966109,
+            "longitude": 15.6559128,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "k\u00e3\u00a4rna skola",
+            "latitude": 58.4177654,
+            "longitude": 15.5165274,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "k\u00e3\u00a4rna skola",
+            "latitude": 58.4184948,
+            "longitude": 15.5152489,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "k\u00e3\u00a4rnabrunnsgatan",
+            "latitude": 58.4188093,
+            "longitude": 15.5107879,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "k\u00e3\u00a4rnabrunnsgatan",
+            "latitude": 58.4201136,
+            "longitude": 15.5107413,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "f\u00e3\u00a5rsaxv\u00e3\u00a4gen",
+            "latitude": 58.4206135,
+            "longitude": 15.5143362,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "s\u00e3\u00b6dra ullst\u00e3\u00a4mma",
+            "latitude": 58.3668871,
+            "longitude": 15.6917526,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "s\u00e3\u00b6dra ullst\u00e3\u00a4mma",
+            "latitude": 58.3666245,
+            "longitude": 15.6919034,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "drabantgatan",
+            "latitude": 58.403016,
+            "longitude": 15.6096883,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "fanjunkaregatan",
+            "latitude": 58.4018384,
+            "longitude": 15.6042473,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "westmansgatan 66",
+            "latitude": 58.402992,
+            "longitude": 15.6027354,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "djursjukhuset",
+            "latitude": 58.400477,
+            "longitude": 15.5506025,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "f\u00e3\u00a5rbetesv\u00e3\u00a4gen",
+            "latitude": 58.4217119,
+            "longitude": 15.5059907,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "f\u00e3\u00a5rhagsv\u00e3\u00a4gen",
+            "latitude": 58.4230869,
+            "longitude": 15.5035528,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "f\u00e3\u00a5rullsv\u00e3\u00a4gen",
+            "latitude": 58.4255704,
+            "longitude": 15.5159257,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "nobymalmsv\u00e3\u00a4gen",
+            "latitude": 58.3984081,
+            "longitude": 15.5064957,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tingsv\u00e3\u00a4gen",
+            "latitude": 58.3979185,
+            "longitude": 15.5447101,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "vink\u00e3\u00a4nnaren",
+            "latitude": 58.4245721,
+            "longitude": 15.511354,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "m\u00e3\u00a5rdtorpsgatan",
+            "latitude": 58.4061993,
+            "longitude": 15.5591021,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "hangaren",
+            "latitude": 58.4099537,
+            "longitude": 15.555925,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "hangaren",
+            "latitude": 58.4109109,
+            "longitude": 15.5562071,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "solhaga",
+            "latitude": 58.4059811,
+            "longitude": 15.5748298,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "solhaga",
+            "latitude": 58.406063,
+            "longitude": 15.5756317,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "mj\u00e3\u00a4rdevi center",
+            "latitude": 58.3936567,
+            "longitude": 15.5594143,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "mj\u00e3\u00a4rdevi center",
+            "latitude": 58.3945148,
+            "longitude": 15.5619625,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "mj\u00e3\u00a4rdevi center",
+            "latitude": 58.394637,
+            "longitude": 15.5599935,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "universitetet",
+            "latitude": 58.4004055,
+            "longitude": 15.5729864,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "vti",
+            "latitude": 58.3947016,
+            "longitude": 15.5732273,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "vallfarten",
+            "latitude": 58.3973954,
+            "longitude": 15.5732089,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "bygdegatan",
+            "latitude": 58.3821502,
+            "longitude": 15.5689333,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "r\u00e3\u00a4ttaregatan",
+            "latitude": 58.3887843,
+            "longitude": 15.574521,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "slestadskolan",
+            "latitude": 58.3860067,
+            "longitude": 15.5724824,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "storskiftesgatan",
+            "latitude": 58.3877037,
+            "longitude": 15.5547095,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "landbogatan",
+            "latitude": 58.3752439,
+            "longitude": 15.5697013,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "garnisonen",
+            "latitude": 58.3967213,
+            "longitude": 15.6156092,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "regementsgatan",
+            "latitude": 58.3975491,
+            "longitude": 15.61489,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "fr\u00e3\u00b6storpsgatan",
+            "latitude": 58.4334186,
+            "longitude": 15.600982,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "klostergatan",
+            "latitude": 58.4143838,
+            "longitude": 15.6210717,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "klostergatan",
+            "latitude": 58.4145307,
+            "longitude": 15.6205179,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tr\u00e3\u00a4dg\u00e3\u00a5rdstorget",
+            "latitude": 58.4103539,
+            "longitude": 15.6246383,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "st\u00e3\u00a5ngebro",
+            "latitude": 58.4170639,
+            "longitude": 15.6367186,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "abisko centrum",
+            "latitude": 58.4156726,
+            "longitude": 15.6058215,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "konsert & kongress",
+            "latitude": 58.4145896,
+            "longitude": 15.6132436,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "eskadern",
+            "latitude": 58.4005968,
+            "longitude": 15.609611,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "eskadern",
+            "latitude": 58.4008896,
+            "longitude": 15.6100254,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "konsert & kongress",
+            "latitude": 58.413833,
+            "longitude": 15.6138381,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "konsert & kongress",
+            "latitude": 58.4143844,
+            "longitude": 15.6155227,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "arla",
+            "latitude": 58.4239758,
+            "longitude": 15.6019675,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "blomgatan",
+            "latitude": 58.4168958,
+            "longitude": 15.5942629,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "nyg\u00e3\u00a5rd",
+            "latitude": 58.4260165,
+            "longitude": 15.5895587,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "nyg\u00e3\u00a5rd",
+            "latitude": 58.4274292,
+            "longitude": 15.5884747,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "roxtorpsgatan 3",
+            "latitude": 58.4274172,
+            "longitude": 15.5929191,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "rusth\u00e3\u00a5llareg\u00e3\u00a5rden",
+            "latitude": 58.4209636,
+            "longitude": 15.5866318,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "rusth\u00e3\u00a5llareg\u00e3\u00a5rden",
+            "latitude": 58.4213833,
+            "longitude": 15.5856007,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "s\u00e3\u00b6rg\u00e3\u00a5rdsgatan",
+            "latitude": 58.4227817,
+            "longitude": 15.5739931,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tyttorpsgatan",
+            "latitude": 58.4252757,
+            "longitude": 15.6052301,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ullevi",
+            "latitude": 58.4299772,
+            "longitude": 15.5846894,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "\u00e3\u2026bylund",
+            "latitude": 58.4153499,
+            "longitude": 15.6003882,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "\u00e3\u2026bylund",
+            "latitude": 58.4155372,
+            "longitude": 15.5986051,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "abisko",
+            "latitude": 58.4151573,
+            "longitude": 15.6065814,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ikea",
+            "latitude": 58.4327655,
+            "longitude": 15.5884341,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "pionj\u00e3\u00a4rgatan",
+            "latitude": 58.3914262,
+            "longitude": 15.6336145,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "myntgatan",
+            "latitude": 58.3812076,
+            "longitude": 15.659922,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "myntgatan",
+            "latitude": 58.3820672,
+            "longitude": 15.6598429,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "h\u00e3\u00a4sslegatan",
+            "latitude": 58.3749978,
+            "longitude": 15.6427091,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "saab civila \u00e3\u2026tvidabergsv\u00e3\u00a4gen",
+            "latitude": 58.3998646,
+            "longitude": 15.6762971,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ortgatan",
+            "latitude": 58.3817237,
+            "longitude": 15.6326573,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "hagalundsv\u00e3\u00a4gen",
+            "latitude": 58.4189288,
+            "longitude": 15.6573823,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "g\u00e3\u00a4rstad",
+            "latitude": 58.4430267,
+            "longitude": 15.6466187,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "g\u00e3\u00a4rstad",
+            "latitude": 58.4441197,
+            "longitude": 15.6462208,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "skogsfrid",
+            "latitude": 58.4041205,
+            "longitude": 15.5999067,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "r\u00e3\u00a4ttaregatan",
+            "latitude": 58.3882932,
+            "longitude": 15.5744089,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "id\u00e3\u00b6gatan",
+            "latitude": 58.4229086,
+            "longitude": 15.678852,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "k\u00e3\u00a4rna kors",
+            "latitude": 58.4141532,
+            "longitude": 15.5197517,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tallboda centrum",
+            "latitude": 58.425793,
+            "longitude": 15.6791347,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "vallaplan",
+            "latitude": 58.4075965,
+            "longitude": 15.5980935,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "humlegatan",
+            "latitude": 58.4123592,
+            "longitude": 15.6366837,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "humlegatan",
+            "latitude": 58.4122546,
+            "longitude": 15.6357435,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tannefors center",
+            "latitude": 58.4092935,
+            "longitude": 15.6462571,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tannefors center",
+            "latitude": 58.4088369,
+            "longitude": 15.646556,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "teknikringen",
+            "latitude": 58.3933048,
+            "longitude": 15.5681431,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "jakobsdal",
+            "latitude": 58.3877558,
+            "longitude": 15.6785584,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "masugnen",
+            "latitude": 58.4173,
+            "longitude": 15.6603971,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "beatelund",
+            "latitude": 58.429704,
+            "longitude": 15.7172484,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "hjulsbro skola",
+            "latitude": 58.3770923,
+            "longitude": 15.7162031,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "hjulsbro skola",
+            "latitude": 58.3777011,
+            "longitude": 15.715931,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "v\u00e3\u00a5rdsbergsv\u00e3\u00a4gen",
+            "latitude": 58.3740366,
+            "longitude": 15.7092106,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ektunav\u00e3\u00a4gen",
+            "latitude": 58.3796832,
+            "longitude": 15.6873877,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ekholmens centrum",
+            "latitude": 58.3799716,
+            "longitude": 15.6835379,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ekholmens centrum",
+            "latitude": 58.3808555,
+            "longitude": 15.6829871,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "\u00e3\u2026by",
+            "latitude": 58.4343241,
+            "longitude": 15.6457095,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "\u00e3\u2026by",
+            "latitude": 58.4343733,
+            "longitude": 15.6457738,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "majelden",
+            "latitude": 58.3972726,
+            "longitude": 15.6389456,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "braskens bro",
+            "latitude": 58.3973713,
+            "longitude": 15.6565932,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "braskens bro",
+            "latitude": 58.3978524,
+            "longitude": 15.6535203,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "djurg\u00e3\u00a5rden centrum",
+            "latitude": 58.3850906,
+            "longitude": 15.5893956,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "timmermansplatsen",
+            "latitude": 58.418402,
+            "longitude": 15.6115569,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "lektorshagen",
+            "latitude": 58.4121786,
+            "longitude": 15.5978983,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "lilla ullevi",
+            "latitude": 58.429824,
+            "longitude": 15.5864289,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tornby park",
+            "latitude": 58.427822,
+            "longitude": 15.6090241,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "jakobsdal",
+            "latitude": 58.3898043,
+            "longitude": 15.6769467,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "berga s\u00e3\u00b6derleden",
+            "latitude": 58.3930898,
+            "longitude": 15.6456636,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "h\u00e3\u00a4sslegatan",
+            "latitude": 58.3746942,
+            "longitude": 15.6442093,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "lingvallen",
+            "latitude": 58.4159709,
+            "longitude": 15.6038532,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "middagsgatan",
+            "latitude": 58.3739183,
+            "longitude": 15.6585999,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "resedan",
+            "latitude": 58.3840452,
+            "longitude": 15.6590651,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ridhusgatan",
+            "latitude": 58.3872168,
+            "longitude": 15.6551839,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ridhusgatan",
+            "latitude": 58.3882268,
+            "longitude": 15.6528426,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "str\u00e3\u00a5gatan",
+            "latitude": 58.3734418,
+            "longitude": 15.6543718,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "d2",
+            "latitude": 58.4180678,
+            "longitude": 15.6214463,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "skatteg\u00e3\u00a5rden",
+            "latitude": 58.43294,
+            "longitude": 15.5760747,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "l\u00e3\u00a4nsstyrelsen",
+            "latitude": 58.4096793,
+            "longitude": 15.6097321,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "m\u00e3\u00a4ster mattias v\u00e3\u00a4g",
+            "latitude": 58.3966763,
+            "longitude": 15.570602,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "m\u00e3\u00a4ster mattias v\u00e3\u00a4g",
+            "latitude": 58.3974185,
+            "longitude": 15.5709924,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "universitetet",
+            "latitude": 58.4001937,
+            "longitude": 15.5717444,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "universitetet",
+            "latitude": 58.4003411,
+            "longitude": 15.571911,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ikea",
+            "latitude": 58.4320052,
+            "longitude": 15.5892205,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tornby park",
+            "latitude": 58.4284142,
+            "longitude": 15.6072759,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ekholmsskolan",
+            "latitude": 58.3778427,
+            "longitude": 15.6767675,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ekholmens v\u00e3\u00a5rdcentral",
+            "latitude": 58.3785357,
+            "longitude": 15.6821176,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "r\u00e3\u00a4knestickan",
+            "latitude": 58.3778362,
+            "longitude": 15.6702994,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "r\u00e3\u00a4knestickan",
+            "latitude": 58.3778366,
+            "longitude": 15.6693084,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "aspn\u00e3\u00a4set",
+            "latitude": 58.3728672,
+            "longitude": 15.6858333,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "brokindsleden",
+            "latitude": 58.3786443,
+            "longitude": 15.6855811,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "fornv\u00e3\u00a4gen",
+            "latitude": 58.3694133,
+            "longitude": 15.68809,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ullst\u00e3\u00a4mma by",
+            "latitude": 58.3726142,
+            "longitude": 15.6797309,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "fagottgatan",
+            "latitude": 58.3662206,
+            "longitude": 15.6820033,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "lilla bjursholmen",
+            "latitude": 58.4375198,
+            "longitude": 15.7592599,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "n\u00e3\u00a4sby all\u00e3\u00a9",
+            "latitude": 58.4512348,
+            "longitude": 15.6438298,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ryds\u00e3\u00a4tter",
+            "latitude": 58.4272885,
+            "longitude": 15.693426,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ryds\u00e3\u00a4tter",
+            "latitude": 58.427545,
+            "longitude": 15.6962996,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "stora bjursholmen",
+            "latitude": 58.437488,
+            "longitude": 15.7449658,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "stora bjursholmen",
+            "latitude": 58.4378211,
+            "longitude": 15.7482279,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "sigbj\u00e3\u00b6rnsgatan",
+            "latitude": 58.4247218,
+            "longitude": 15.6377611,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "sigbj\u00e3\u00b6rnsgatan",
+            "latitude": 58.4248816,
+            "longitude": 15.6379628,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "landerydsv\u00e3\u00a4gen",
+            "latitude": 58.4000815,
+            "longitude": 15.6902825,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "k\u00e3\u00b6pmansgr\u00e3\u00a4nd",
+            "latitude": 58.4089516,
+            "longitude": 15.6265848,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "l\u00e3\u00a4gergatan",
+            "latitude": 58.4086042,
+            "longitude": 15.5175847,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "isberget",
+            "latitude": 58.3898176,
+            "longitude": 15.5665202,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "teknikringen",
+            "latitude": 58.3933993,
+            "longitude": 15.56808,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tegskiftesgatan",
+            "latitude": 58.3834607,
+            "longitude": 15.5559784,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "poleraregatan",
+            "latitude": 58.3823254,
+            "longitude": 15.6409995,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "poleraregatan",
+            "latitude": 58.3823335,
+            "longitude": 15.6393519,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "us norra entr\u00e3\u00a9n",
+            "latitude": 58.402757,
+            "longitude": 15.6223459,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ortgatan",
+            "latitude": 58.380503,
+            "longitude": 15.6343265,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "mj\u00e3\u00a4rdevi",
+            "latitude": 58.396507,
+            "longitude": 15.557493,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "mj\u00e3\u00a4rdevi",
+            "latitude": 58.3978052,
+            "longitude": 15.5561106,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "landerydsv\u00e3\u00a4gen",
+            "latitude": 58.4000174,
+            "longitude": 15.6881961,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "loftgatan",
+            "latitude": 58.4081495,
+            "longitude": 15.6392518,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "loftgatan",
+            "latitude": 58.4085485,
+            "longitude": 15.6386721,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "sandg\u00e3\u00a5rdsgatan",
+            "latitude": 58.4039796,
+            "longitude": 15.6456689,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "sandg\u00e3\u00a5rdsgatan",
+            "latitude": 58.4044748,
+            "longitude": 15.6447226,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tegelbruksgatan",
+            "latitude": 58.406007,
+            "longitude": 15.6423282,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tegelbruksgatan",
+            "latitude": 58.4062866,
+            "longitude": 15.6419395,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "risbrinksgatan",
+            "latitude": 58.3993315,
+            "longitude": 15.6463816,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "galoppgatan",
+            "latitude": 58.3836754,
+            "longitude": 15.6512114,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "galoppgatan",
+            "latitude": 58.3838669,
+            "longitude": 15.6502263,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "lillg\u00e3\u00a5rdsgatan",
+            "latitude": 58.3901407,
+            "longitude": 15.6460488,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "yrkesv\u00e3\u00a4gen",
+            "latitude": 58.3874769,
+            "longitude": 15.6445426,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "yrkesv\u00e3\u00a4gen",
+            "latitude": 58.3875266,
+            "longitude": 15.644375,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ekhaga",
+            "latitude": 58.3859785,
+            "longitude": 15.6773036,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ekhaga",
+            "latitude": 58.3862547,
+            "longitude": 15.674783,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "kryddv\u00e3\u00a4gen",
+            "latitude": 58.3854267,
+            "longitude": 15.6643016,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "kryddv\u00e3\u00a4gen",
+            "latitude": 58.3856195,
+            "longitude": 15.6655123,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "\u00e3\u2026leryd",
+            "latitude": 58.3849861,
+            "longitude": 15.6615665,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "fogdegatan",
+            "latitude": 58.4286301,
+            "longitude": 15.5679867,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "stigl\u00e3\u00b6tsgatan",
+            "latitude": 58.4256805,
+            "longitude": 15.5688871,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "landeryds kyrka",
+            "latitude": 58.3693369,
+            "longitude": 15.7250187,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "landeryds v\u00e3\u00a5rdboende",
+            "latitude": 58.3767983,
+            "longitude": 15.7218613,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "nobymalmsv\u00e3\u00a4gen",
+            "latitude": 58.3990207,
+            "longitude": 15.5071926,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "harvestad",
+            "latitude": 58.3623336,
+            "longitude": 15.6958074,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "harvestad",
+            "latitude": 58.3627299,
+            "longitude": 15.6955642,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "carmelid",
+            "latitude": 58.359092,
+            "longitude": 15.5472351,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "lambohov s\u00e3\u00a4teri",
+            "latitude": 58.3783576,
+            "longitude": 15.5548829,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "lilla \u00e3\u2026by \u00e3\u2013sterg\u00e3\u00a5rd",
+            "latitude": 58.3617103,
+            "longitude": 15.5495975,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "lilla \u00e3\u2026by \u00e3\u2013sterg\u00e3\u00a5rd",
+            "latitude": 58.3618977,
+            "longitude": 15.5496457,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "lilla \u00e3\u2026by",
+            "latitude": 58.3637205,
+            "longitude": 15.5508681,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "l\u00e3\u00b6vs\u00e3\u00a4tter",
+            "latitude": 58.3570721,
+            "longitude": 15.5635551,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "l\u00e3\u00b6vs\u00e3\u00a4tter",
+            "latitude": 58.3574623,
+            "longitude": 15.5636181,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "sn\u00e3\u00b6v\u00e3\u00a4gen",
+            "latitude": 58.4265395,
+            "longitude": 15.6861224,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tokarps skola",
+            "latitude": 58.4244403,
+            "longitude": 15.5071327,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "us norra entr\u00e3\u00a9n",
+            "latitude": 58.4030048,
+            "longitude": 15.6221,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "nobeltorget",
+            "latitude": 58.3937395,
+            "longitude": 15.5780956,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "vallastadens skola",
+            "latitude": 58.3926977,
+            "longitude": 15.5894634,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "nobeltorget",
+            "latitude": 58.3939475,
+            "longitude": 15.5777318,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "nobeltorget",
+            "latitude": 58.3937259,
+            "longitude": 15.5786754,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "timmermansplatsen",
+            "latitude": 58.4183409,
+            "longitude": 15.6111088,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "runstensgatan",
+            "latitude": 58.4206706,
+            "longitude": 15.6363489,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "beatelund",
+            "latitude": 58.4296465,
+            "longitude": 15.7172014,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "djurg\u00e3\u00a5rden",
+            "latitude": 58.3932423,
+            "longitude": 15.6076562,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "flygvapenmuseum",
+            "latitude": 58.410608,
+            "longitude": 15.5223714,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "mellang\u00e3\u00a5rden",
+            "latitude": 58.4241629,
+            "longitude": 15.5909579,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "ullst\u00e3\u00a4mma by",
+            "latitude": 58.3728121,
+            "longitude": 15.6782602,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "morgongatan",
+            "latitude": 58.3736164,
+            "longitude": 15.6678703,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "johannes magnus v\u00e3\u00a4g",
+            "latitude": 58.3929887,
+            "longitude": 15.5803901,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "garnisonen",
+            "latitude": 58.3965538,
+            "longitude": 15.6156168,
+            "footfall": 0.7
+        },
+        {
+            "spread": 300.0,
+            "name": "link\u00e3\u00b6ping c",
+            "latitude": 58.4165503,
+            "longitude": 15.6258809,
+            "footfall": 1.0
+        },
+        {
+            "spread": 200.0,
+            "name": "roxtorpsgatan 3",
+            "latitude": 58.4274971,
+            "longitude": 15.592855,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tv\u00e3\u00a4ttlappen",
+            "latitude": 58.4249945,
+            "longitude": 15.5954748,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "arla",
+            "latitude": 58.4237318,
+            "longitude": 15.6008669,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tyttorpsgatan",
+            "latitude": 58.425195,
+            "longitude": 15.6051448,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "fr\u00e3\u00b6storpsgatan",
+            "latitude": 58.432123,
+            "longitude": 15.602474,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "rusth\u00e3\u00a5llareg\u00e3\u00a5rden",
+            "latitude": 58.4215265,
+            "longitude": 15.5873751,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "sviestad",
+            "latitude": 58.3972009,
+            "longitude": 15.7155541,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "sviestad",
+            "latitude": 58.3970183,
+            "longitude": 15.7180015,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "us s\u00e3\u00b6dra entr\u00e3\u00a9n",
+            "latitude": 58.3995751,
+            "longitude": 15.6204846,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "abisko centrum",
+            "latitude": 58.4157936,
+            "longitude": 15.6060637,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "abisko",
+            "latitude": 58.4151021,
+            "longitude": 15.6072291,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "l\u00e3\u00b6vsbergsv\u00e3\u00a4gen",
+            "latitude": 58.3733866,
+            "longitude": 15.69694,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "l\u00e3\u00a4rdomsgatan",
+            "latitude": 58.3918816,
+            "longitude": 15.5832898,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "v\u00e3\u00a4ndpunkten",
+            "latitude": 58.3910521,
+            "longitude": 15.5876754,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "l\u00e3\u00a4rdomsgatan",
+            "latitude": 58.3918462,
+            "longitude": 15.5836577,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "johannes magnus v\u00e3\u00a4g",
+            "latitude": 58.3931527,
+            "longitude": 15.5803996,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "campushallen",
+            "latitude": 58.3953843,
+            "longitude": 15.5777053,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "studenthuset",
+            "latitude": 58.3971789,
+            "longitude": 15.5776908,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "b-huset",
+            "latitude": 58.3992854,
+            "longitude": 15.5776789,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "bl\u00e3\u00a5 havet",
+            "latitude": 58.4005195,
+            "longitude": 15.5777132,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "tallboda centrum",
+            "latitude": 58.4268979,
+            "longitude": 15.6774005,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "paradisgatan",
+            "latitude": 58.3927868,
+            "longitude": 15.5882373,
+            "footfall": 0.7
+        },
+        {
+            "spread": 200.0,
+            "name": "vallastadens kyrka",
+            "latitude": 58.3914363,
+            "longitude": 15.5865971,
+            "footfall": 0.7
+        }
+    ],
+    "locationTypeCount": {
+        "total": 39,
+        "Gas-station": 7,
+        "Grocery-store": 13,
+        "Kiosk": 17,
+        "Convenience": 2
+    },
+    "availableFrom": "2023-11-05T23:01:00",
+    "availableTo": "2023-11-23T17:00:00"
+}

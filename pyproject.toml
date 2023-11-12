@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "considition-2023"
+version = "0.1.0"
+description = ""
+authors = ["Iven Winkelmann <winkelmann.iven@gmail.com>", "Jesper"]
+readme = "README.md"
+packages = [
+    {include = "src"},
+]
+
+[tool.poetry.dependencies]
+python = ">3.11, <3.13"
+requests = "^2.31.0"
+python-dotenv = "^1.0.0"
+numpy = "^1.26.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
