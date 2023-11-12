@@ -1,4 +1,5 @@
 from pathlib import Path
+from time import perf_counter_ns
 
 from src.data_loading import Location, load_general_data, load_map_data
 from src.scoring import (
@@ -39,13 +40,21 @@ def main():
         f3100_count_vector, f9100_count_vector
     )
 
-    score_vectorized(
-        general_data,
-        distance_matrix,
-        sales_volume_vector,
-        footfall_vector,
-        refill_station_count_vector,
-    )
+    runs = []
+
+    for _ in range(100_000):
+        start = perf_counter_ns()
+        score_vectorized(
+            general_data,
+            distance_matrix,
+            sales_volume_vector,
+            footfall_vector,
+            refill_station_count_vector,
+        )
+        stop = perf_counter_ns()
+        runs.append(stop - start)
+
+    print(f"Average time: {sum(runs) / len(runs)} ns")
 
     total_score = 0
     for location in solution:

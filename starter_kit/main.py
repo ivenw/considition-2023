@@ -7,6 +7,7 @@ from src.data_keys import (
     LocationKeys as LK,
     ScoringKeys as SK,
 )
+from time import perf_counter_ns
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -90,7 +91,15 @@ def main():
             # ------------------------------------------------------------
 
             # Score solution locally
-            score = calculateScore(mapName, solution, mapEntity, generalData)
+
+            runs = []
+            for _ in range(100_000):
+                start = perf_counter_ns()
+                score = calculateScore(mapName, solution, mapEntity, generalData)
+                stop = perf_counter_ns()
+                runs.append(stop - start)
+
+            print(f"Average time: {sum(runs) / len(runs)} ns")
 
             id_ = score[SK.gameId]
             print(f"Storing  game with id {id_}.")
