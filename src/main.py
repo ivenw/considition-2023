@@ -17,11 +17,13 @@ from src.scoring import (
     combine_refill_station_count_vectors,
     score_vectorized,
 )
+from src.utils import map_solutions
 
-NUM_GENERATIONS = 10000
+NUM_GENERATIONS = 100
 NUM_PARENTS_MATING = 4
-
 SOL_PER_POP = 15
+FITNESS_BATCH_SIZE = SOL_PER_POP
+    
 
 
 def naive_algo(locations: list[Location]) -> list[Location]:
@@ -33,17 +35,6 @@ def naive_algo(locations: list[Location]) -> list[Location]:
         result.append(location)
 
     return result
-
-
-def vanilla_score(locations, general_data, solutions):    
-    for idx, location in enumerate(locations):
-        location.f3100_count = solutions[idx*2]
-        location.f9100_count = solutions[idx*2+1]
-
-    total_score = 0
-    for location in locations:
-        total_score += score(location, general_data)
-    return total_score
 
 
 def run_performance_test(function: callable, *args, **kwargs):
@@ -69,22 +60,24 @@ def main():
     general_data = load_general_data(Path("data/general.json"))
     solution = naive_algo(locations)
 
-    num_genes = len(locations) * 2
+    num_genes = len(locations)
     
 
-    def fitness_func(ga_instance, solution, solution_idx):
-        return vanilla_score(locations, general_data, solution)
+    def fitness_func(ga_instance: pygad.GA, solutions: NDArray[np.int32], solution_idx):
+        mapped_solutions = map_solutions(solutions)
+        # TODO: Add vectorized scoring function 
+        return mapped_solutions
 
     ga_instance = pygad.GA(
         num_generations=NUM_GENERATIONS,
         num_parents_mating=NUM_PARENTS_MATING,
         fitness_func=fitness_func,
-        sol_per_pop=8,
+        sol_per_pop=SOL_PER_POP,
+        fitness_batch_size=FITNESS_BATCH_SIZE,
         num_genes=num_genes,
         on_generation=on_generation,
         gene_type=int,
-        init_range_low=0,
-        init_range_high=3
+        gene_space=np.linspace(0,20,21, dtype=np.int32),
     )
     ga_instance.run()
 
