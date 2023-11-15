@@ -15,15 +15,48 @@ from src.scoring import (
     get_f9100_count_vector,
     get_footfall_vector,
     get_sales_volume_vector,
-    score,
     score_vectorized,
 )
-from src.utils import map_solutions
 
-NUM_GENERATIONS = 100
-NUM_PARENTS_MATING = 4
-SOL_PER_POP = 15
+
+NUM_GENERATIONS = 1_000
+SOL_PER_POP = 1_000
 FITNESS_BATCH_SIZE = SOL_PER_POP
+
+NUM_PARENTS_MATING = 4
+PARENT_SELECTION_TYPE = "sss"
+KEEP_PARENTS = 1
+
+CROSSOVER_TYPE = "single_point"
+
+MUTATION_TYPE = "random"
+MUTATION_PERCENT_GENES = 10
+
+GENE_TO_LOCATION_MAP = np.array(
+    [
+        (0, 0),
+        (1, 0),
+        (2, 0),
+        (3, 0),
+        (4, 0),
+        (5, 0),
+        (0, 1),
+        (1, 1),
+        (2, 1),
+        (3, 1),
+        (4, 1),
+        (0, 2),
+        (1, 2),
+        (2, 2),
+        (3, 2),
+        (0, 3),
+        (1, 3),
+        (2, 3),
+        (0, 4),
+        (1, 4),
+        (0, 5),
+    ]
+)
 
 
 def naive_algo(locations: list[Location]) -> list[Location]:
@@ -56,6 +89,19 @@ def on_generation(ga_instance: pygad.GA):
         )
 
 
+def fitness_func(
+    ga_instance: pygad.GA, solutions: NDArray[np.int32], solution_idx: NDArray[np.int32]
+):
+    del ga_instance
+    del solution_idx
+
+    mapped_solutions = GENE_TO_LOCATION_MAP[solutions]
+
+    result = mapped_solutions.sum(axis=2).sum(axis=1)
+
+    return result
+
+
 def main():
     locations = load_map_data(Path("data/vasteras.json"))
     general_data = load_general_data(Path("data/general.json"))
@@ -63,21 +109,22 @@ def main():
 
     num_genes = len(locations)
 
-    def fitness_func(ga_instance: pygad.GA, solutions: NDArray[np.int32], solution_idx):
-        mapped_solutions = map_solutions(solutions)
-        # TODO: Add vectorized scoring function
-        return mapped_solutions
-
     ga_instance = pygad.GA(
-        num_generations=NUM_GENERATIONS,
-        num_parents_mating=NUM_PARENTS_MATING,
         fitness_func=fitness_func,
+        on_generation=on_generation,
+        num_generations=NUM_GENERATIONS,
         sol_per_pop=SOL_PER_POP,
         fitness_batch_size=FITNESS_BATCH_SIZE,
+        num_parents_mating=NUM_PARENTS_MATING,
+        parent_selection_type=PARENT_SELECTION_TYPE,
+        # keep_parents=KEEP_PARENTS,
+        keep_parents=2,
+        crossover_type=CROSSOVER_TYPE,
+        mutation_type=MUTATION_TYPE,
+        mutation_percent_genes=MUTATION_PERCENT_GENES,
         num_genes=num_genes,
-        on_generation=on_generation,
         gene_type=np.int32,  # type: ignore
-        gene_space=np.linspace(0, 20, 21, dtype=np.int32),
+        gene_space=np.arange(0, 21, dtype=np.int32),
     )
     ga_instance.run()
 
@@ -85,41 +132,39 @@ def main():
     print(ga_instance.population)
     print(ga_instance.best_solution())
 
-    sys.exit(0)
-
-    distance_matrix = get_distance_matrix(locations)
-    sales_volume_vector = get_sales_volume_vector(locations)
-    footfall_vector = get_footfall_vector(locations)
-
-    f3100_count_vector = get_f3100_count_vector(solution)
-    f9100_count_vector = get_f9100_count_vector(solution)
-    refill_station_count_vector = combine_refill_station_count_vectors(
-        f3100_count_vector, f9100_count_vector
-    )
-
-    """print ("Running performance test for score_vectorized")
-    run_performance_test(
-        score_vectorized,
-        general_data,
-        distance_matrix,
-        sales_volume_vector,
-        footfall_vector,
-        refill_station_count_vector,
-    )"""
-
-    """total_score = score_vectorized(
-        general_data,
-        distance_matrix,
-        sales_volume_vector,
-        footfall_vector,
-        refill_station_count_vector,
-    )
-    print(f"Total score, vectorized: {total_score}")"""
-
-    """print ("Running performance test for naive_score")
-    run_performance_test(naive_score, solution, general_data)"""
-    total_score = vanilla_score(solution, general_data)
-    print(f"Total score: {total_score}")
+    # distance_matrix = get_distance_matrix(locations)
+    # sales_volume_vector = get_sales_volume_vector(locations)
+    # footfall_vector = get_footfall_vector(locations)
+    #
+    # f3100_count_vector = get_f3100_count_vector(solution)
+    # f9100_count_vector = get_f9100_count_vector(solution)
+    # refill_station_count_vector = combine_refill_station_count_vectors(
+    #     f3100_count_vector, f9100_count_vector
+    # )
+    #
+    # print("Running performance test for score_vectorized")
+    # run_performance_test(
+    #     score_vectorized,
+    #     general_data,
+    #     distance_matrix,
+    #     sales_volume_vector,
+    #     footfall_vector,
+    #     refill_station_count_vector,
+    # )
+    #
+    # total_score = score_vectorized(
+    #     general_data,
+    #     distance_matrix,
+    #     sales_volume_vector,
+    #     footfall_vector,
+    #     refill_station_count_vector,
+    # )
+    # print(f"Total score, vectorized: {total_score}")
+    #
+    # print("Running performance test for naive_score")
+    # run_performance_test(naive_score, solution, general_data)
+    # total_score = vanilla_score(solution, general_data)
+    # print(f"Total score: {total_score}")
 
 
 if __name__ == "__main__":
