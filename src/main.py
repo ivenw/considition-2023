@@ -1,20 +1,21 @@
-import pygad
-import numpy as np
-from numpy.typing import NDArray
 import sys
 from pathlib import Path
 from time import perf_counter_ns
+from typing import Callable, Any
 
+import numpy as np
+import pygad
+from numpy.typing import NDArray
 
 from src.data_loading import Location, load_general_data, load_map_data
 from src.scoring import (
-    score,
+    combine_refill_station_count_vectors,
     get_distance_matrix,
     get_f3100_count_vector,
     get_f9100_count_vector,
-    get_sales_volume_vector,
     get_footfall_vector,
-    combine_refill_station_count_vectors,
+    get_sales_volume_vector,
+    score,
     score_vectorized,
 )
 from src.utils import map_solutions
@@ -23,7 +24,6 @@ NUM_GENERATIONS = 100
 NUM_PARENTS_MATING = 4
 SOL_PER_POP = 15
 FITNESS_BATCH_SIZE = SOL_PER_POP
-    
 
 
 def naive_algo(locations: list[Location]) -> list[Location]:
@@ -37,7 +37,7 @@ def naive_algo(locations: list[Location]) -> list[Location]:
     return result
 
 
-def run_performance_test(function: callable, *args, **kwargs):
+def run_performance_test(function: Callable[[], Any], *args, **kwargs):
     runs = []
     for _ in range(100_000):
         start = perf_counter_ns()
@@ -48,10 +48,11 @@ def run_performance_test(function: callable, *args, **kwargs):
     print(f"Average time: {sum(runs) / len(runs)} ns")
 
 
-def on_generation(ga_instance):
+def on_generation(ga_instance: pygad.GA):
     if ga_instance.generations_completed % 50 == 0:
         print(
-            f"Generation {ga_instance.generations_completed} best solution score: {ga_instance.best_solution()[1]}"
+            f"Generation {ga_instance.generations_completed}\n",
+            f"best solution score: {ga_instance.best_solution()[1]}",
         )
 
 
@@ -61,11 +62,10 @@ def main():
     solution = naive_algo(locations)
 
     num_genes = len(locations)
-    
 
     def fitness_func(ga_instance: pygad.GA, solutions: NDArray[np.int32], solution_idx):
         mapped_solutions = map_solutions(solutions)
-        # TODO: Add vectorized scoring function 
+        # TODO: Add vectorized scoring function
         return mapped_solutions
 
     ga_instance = pygad.GA(
@@ -76,14 +76,14 @@ def main():
         fitness_batch_size=FITNESS_BATCH_SIZE,
         num_genes=num_genes,
         on_generation=on_generation,
-        gene_type=int,
-        gene_space=np.linspace(0,20,21, dtype=np.int32),
+        gene_type=np.int32,  # type: ignore
+        gene_space=np.linspace(0, 20, 21, dtype=np.int32),
     )
     ga_instance.run()
 
-    print (ga_instance.initial_population)
-    print (ga_instance.population)
-    print (ga_instance.best_solution())
+    print(ga_instance.initial_population)
+    print(ga_instance.population)
+    print(ga_instance.best_solution())
 
     sys.exit(0)
 
