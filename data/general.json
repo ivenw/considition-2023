@@ -48,17 +48,19 @@
         "orebro",
         "malmo",
         "london",
-        "berlin"
+        "berlin",
+        "s-sandbox"
     ],
     "trainingMapNames": [
         "goteborg",
         "uppsala",
         "linkoping",
-        "vasteras"
+        "vasteras",
+        "g-sandbox"
     ],
     "co2PricePerKiloInSek": 1.06,
-    "willingnessToTravelInMeters": 150.0,
+    "willingnessToTravelInMeters": 200.0,
     "constantExpDistributionFunction": 1.03,
-    "refillSalesFactor": 0.43,
-    "refillDistributionRate": 0.5
+    "refillSalesFactor": 0.58,
+    "refillDistributionRate": 0.97
 }

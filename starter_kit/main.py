@@ -1,6 +1,6 @@
 import os
 import json
-from scoring import calculateScore
+from starter_kit.scoring import calculateScore
 from src.api import getGeneralData, getMapData, submit
 from src.data_keys import (
     MapNames as MN,
@@ -82,7 +82,7 @@ def main():
                 name = location[LK.locationName]
 
                 salesVolume = location[LK.salesVolume]
-                if salesVolume > 100:
+                if True:
                     solution[LK.locations][name] = {
                         LK.f9100Count: 0,
                         LK.f3100Count: 1,
@@ -92,18 +92,18 @@ def main():
 
             # Score solution locally
 
-            runs = []
-            for _ in range(100_000):
-                start = perf_counter_ns()
-                score = calculateScore(mapName, solution, mapEntity, generalData)
-                stop = perf_counter_ns()
-                runs.append(stop - start)
+            # solution = {
+            #     LK.locations: {"location1": {LK.f9100Count: 0, LK.f3100Count: 1}}
+            # }
 
-            print(f"Average time: {sum(runs) / len(runs)} ns")
+            score = calculateScore(mapName, solution, mapEntity, generalData)
 
             id_ = score[SK.gameId]
             print(f"Storing  game with id {id_}.")
             print(f"Score: {score[SK.gameScore][SK.total]}")
+            print(f"CO2: {score[SK.gameScore][SK.co2Savings]}")
+            print(f"Footfall: {score[SK.gameScore][SK.totalFootfall]}")
+            print(f"Revenue: {score[SK.totalRevenue]}")
 
             # print(f"Enter {id_} into visualization.ipynb for local vizualization ")
 

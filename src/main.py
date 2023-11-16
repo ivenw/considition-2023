@@ -1,4 +1,3 @@
-import sys
 from pathlib import Path
 from time import perf_counter_ns
 from typing import Callable, Any
@@ -9,12 +8,7 @@ from numpy.typing import NDArray
 
 from src.data_loading import Location, load_general_data, load_map_data
 from src.scoring import (
-    combine_refill_station_count_vectors,
-    get_distance_matrix,
-    get_f3100_count_vector,
-    get_f9100_count_vector,
-    get_footfall_vector,
-    get_sales_volume_vector,
+    ScoringData,
     score_vectorized,
 )
 
@@ -59,15 +53,16 @@ GENE_TO_LOCATION_MAP = np.array(
 )
 
 
-def naive_algo(locations: list[Location]) -> list[Location]:
+def naive_algo(locations: list[Location]) -> NDArray[np.uint32]:
+    # should score 429409.0
     result = []
     for location in locations:
-        if location.sales_volume > 100:
+        if True:
             location.f3100_count = 1
             location.f9100_count = 0
-        result.append(location)
+        result.append([location.f3100_count, location.f9100_count])
 
-    return result
+    return np.array([result, result], dtype=np.uint32)
 
 
 def run_performance_test(function: Callable[[], Any], *args, **kwargs):
@@ -107,64 +102,39 @@ def main():
     general_data = load_general_data(Path("data/general.json"))
     solution = naive_algo(locations)
 
-    num_genes = len(locations)
+    # num_genes = len(locations)
+    #
+    # ga_instance = pygad.GA(
+    #     fitness_func=fitness_func,
+    #     on_generation=on_generation,
+    #     num_generations=NUM_GENERATIONS,
+    #     sol_per_pop=SOL_PER_POP,
+    #     fitness_batch_size=FITNESS_BATCH_SIZE,
+    #     num_parents_mating=NUM_PARENTS_MATING,
+    #     parent_selection_type=PARENT_SELECTION_TYPE,
+    #     # keep_parents=KEEP_PARENTS,
+    #     keep_parents=2,
+    #     crossover_type=CROSSOVER_TYPE,
+    #     mutation_type=MUTATION_TYPE,
+    #     mutation_percent_genes=MUTATION_PERCENT_GENES,
+    #     num_genes=num_genes,
+    #     gene_type=np.int32,  # type: ignore
+    #     gene_space=np.arange(0, 21, dtype=np.int32),
+    # )
+    # ga_instance.run()
+    #
+    # print(ga_instance.initial_population)
+    # print(ga_instance.population)
+    # print(ga_instance.best_solution())
 
-    ga_instance = pygad.GA(
-        fitness_func=fitness_func,
-        on_generation=on_generation,
-        num_generations=NUM_GENERATIONS,
-        sol_per_pop=SOL_PER_POP,
-        fitness_batch_size=FITNESS_BATCH_SIZE,
-        num_parents_mating=NUM_PARENTS_MATING,
-        parent_selection_type=PARENT_SELECTION_TYPE,
-        # keep_parents=KEEP_PARENTS,
-        keep_parents=2,
-        crossover_type=CROSSOVER_TYPE,
-        mutation_type=MUTATION_TYPE,
-        mutation_percent_genes=MUTATION_PERCENT_GENES,
-        num_genes=num_genes,
-        gene_type=np.int32,  # type: ignore
-        gene_space=np.arange(0, 21, dtype=np.int32),
+    scoring_data = ScoringData.create(locations, general_data)
+
+    total_score = score_vectorized(
+        general_data,
+        scoring_data,
+        solution,
     )
-    ga_instance.run()
-
-    print(ga_instance.initial_population)
-    print(ga_instance.population)
-    print(ga_instance.best_solution())
-
-    # distance_matrix = get_distance_matrix(locations)
-    # sales_volume_vector = get_sales_volume_vector(locations)
-    # footfall_vector = get_footfall_vector(locations)
-    #
-    # f3100_count_vector = get_f3100_count_vector(solution)
-    # f9100_count_vector = get_f9100_count_vector(solution)
-    # refill_station_count_vector = combine_refill_station_count_vectors(
-    #     f3100_count_vector, f9100_count_vector
-    # )
-    #
-    # print("Running performance test for score_vectorized")
-    # run_performance_test(
-    #     score_vectorized,
-    #     general_data,
-    #     distance_matrix,
-    #     sales_volume_vector,
-    #     footfall_vector,
-    #     refill_station_count_vector,
-    # )
-    #
-    # total_score = score_vectorized(
-    #     general_data,
-    #     distance_matrix,
-    #     sales_volume_vector,
-    #     footfall_vector,
-    #     refill_station_count_vector,
-    # )
-    # print(f"Total score, vectorized: {total_score}")
-    #
-    # print("Running performance test for naive_score")
-    # run_performance_test(naive_score, solution, general_data)
-    # total_score = vanilla_score(solution, general_data)
-    # print(f"Total score: {total_score}")
+    print(f"Total score, vectorized: {total_score}")
 
 
 if __name__ == "__main__":
