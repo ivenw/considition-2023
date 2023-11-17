@@ -22,7 +22,7 @@ class ScoringData:
             redistributed_sales_vector=create_redistributed_sales_vector(
                 create_distance_matrix(locations),
                 general_data,
-                create_sales_volume_vector(locations),
+                create_sales_volume_vector(locations, general_data),
             ),
             sales_capacity_vector=create_sales_capacity_vector(general_data),
             leasing_cost_vector=create_leasting_cost_vector(general_data),
@@ -59,10 +59,12 @@ def create_distance_matrix(locations: list[Location]) -> NDArray[np.float32]:
     return result
 
 
-def create_sales_volume_vector(locations: list[Location]) -> NDArray[np.float32]:
+def create_sales_volume_vector(
+    locations: list[Location], general_data: GeneralData
+) -> NDArray[np.float32]:
     result = np.zeros(len(locations), dtype=np.float32)
     for i in range(len(locations)):
-        result[i] = locations[i].sales_volume
+        result[i] = locations[i].sales_volume * general_data.refill_sales_factor
     return result
 
 
