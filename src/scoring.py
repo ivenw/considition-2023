@@ -10,7 +10,8 @@ from src.data_loading import Coordinate, GeneralData, Location
 
 @dataclass
 class ScoringData:
-    redistributed_sales_vector: NDArray[np.float32]
+    distance_matrix: NDArray[np.float32]
+    sales_volume_vector: NDArray[np.float32]
     sales_capacity_vector: NDArray[np.float32]
     leasing_cost_vector: NDArray[np.float32]
     co2_produced_vector: NDArray[np.float32]
@@ -19,11 +20,8 @@ class ScoringData:
     @classmethod
     def create(cls, locations: list[Location], general_data: GeneralData) -> Self:
         return cls(
-            redistributed_sales_vector=create_redistributed_sales_vector(
-                create_distance_matrix(locations),
-                general_data,
-                create_sales_volume_vector(locations, general_data),
-            ),
+            distance_matrix=create_distance_matrix(locations),
+            sales_volume_vector=create_sales_volume_vector(locations, general_data),
             sales_capacity_vector=create_sales_capacity_vector(general_data),
             leasing_cost_vector=create_leasting_cost_vector(general_data),
             co2_produced_vector=create_co2_produced_vector(general_data),
@@ -68,22 +66,6 @@ def create_sales_volume_vector(
     return result
 
 
-def create_redistributed_sales_vector(
-    distance_matrix: NDArray[np.float32],
-    general_data: GeneralData,
-    sales_volume_vector: NDArray[np.float32],
-) -> NDArray[np.float32]:
-    location_matrix = np.where(
-        distance_matrix < general_data.wiling_to_travel, distance_matrix, 0
-    )
-    location_matrix **= general_data.exp_distribution_factor
-    location_matrix *= general_data.refill_sales_factor
-    location_matrix *= sales_volume_vector
-    result = location_matrix.sum(axis=1)
-
-    return sales_volume_vector
-
-
 def create_sales_capacity_vector(general_data: GeneralData) -> NDArray[np.float32]:
     return np.array(
         [general_data.f3100_refill_capacity, general_data.f9100_refill_capacity],
@@ -126,36 +108,66 @@ def score_vectorized(
     scoring_data: ScoringData,
     solution: NDArray[np.uint32],
 ):
-    refill_station_mask = location_has_refill_station(solution)
+    # n = number of solutions
+    # m = number of locations
+
+    has_refill_station = location_has_refill_station(solution)  # (n, m)
+
+    distances = np.where(
+        scoring_data.distance_matrix < general_data.wiling_to_travel,
+        scoring_data.distance_matrix,
+        0,
+    )
+    distances = np.where(distances == 0, np.nan, distances)  # (m, m)
+
+    distribution_factors = np.nan_to_num(
+        np.power(
+            general_data.exp_distribution_factor,
+            general_data.wiling_to_travel - distances,
+        )
+        - 1
+    )  # (m, m)
+
+    distribution_factors = distribution_factors[np.newaxis, :, :].repeat(
+        len(solution), axis=0
+    )
+
+    filtered_distribution_factors = np.zeros_like(distribution_factors)
+    filtered_distribution_factors[~has_refill_station] = distribution_factors[
+        ~has_refill_station
+    ]
+
+    total_distribution_factor = filtered_distribution_factors.sum(axis=1)[:, np.newaxis]
+
+    # i think here it's faling apart
+    redistributed_sales = np.nan_to_num(
+        np.divide(
+            filtered_distribution_factors,
+            total_distribution_factor,
+            out=np.zeros_like(filtered_distribution_factors),
+            where=total_distribution_factor != 0,
+        )
+        * general_data.refill_distribution_rate
+        * scoring_data.sales_volume_vector[np.newaxis, :].T
+    ).sum(axis=1)
+
+    sales_volume = scoring_data.sales_volume_vector[np.newaxis, :].repeat(
+        len(solution), axis=0
+    )
+    sales_volume = np.where(has_refill_station, sales_volume, 0)
+    sales_volume = redistributed_sales + sales_volume
 
     sales_capacity = np.sum(solution * scoring_data.sales_capacity_vector, axis=2)
-    print(f"{sales_capacity=}")
-    # sales volumen not correct
-    sales_volume = (
-        # np.where(
-        #     refill_station_mask,
-        #     # the repeat can be moved out into the scoring data
-        #     scoring_data.redistributed_sales_vector[np.newaxis, :].repeat(
-        #         len(solution), axis=0
-        #     ),
-        #     0,
-        # )
-        scoring_data.redistributed_sales_vector.round(0).clip(0, sales_capacity)
-    )
-    # print(scoring_data.redistributed_sales_vector)
-    print(f"{sales_volume=}")
 
-    # revune not yet correct, over counting
+    sales_volume = sales_volume.round(0).clip(0, sales_capacity)
+
     total_revenue = (sales_volume * general_data.refill_profit_per_unit).sum(axis=1)
-    print(f"{total_revenue=}")
 
     total_leasing_cost = (
         (solution * scoring_data.leasing_cost_vector).sum(axis=2).sum(axis=1)
     )
-    print(f"{total_leasing_cost=}")
 
     total_earnings = total_revenue - total_leasing_cost
-    print(f"{total_earnings=}")
 
     total_co2_produced = (
         (solution * scoring_data.co2_produced_vector / 1_000)
@@ -163,9 +175,7 @@ def score_vectorized(
         .sum(axis=1)
         .round(0)
     )
-    print(f"{total_co2_produced=}")
 
-    # co2 savings not yet correct, over counting
     total_co2_savings = (
         (
             sales_volume
@@ -175,13 +185,11 @@ def score_vectorized(
         .sum(axis=1)
         .round()
     )
-    print(f"{total_co2_savings=}")
 
     total_co2 = total_co2_savings - total_co2_produced
-    print(f"{total_co2=}")
 
     total_footfall = np.where(
-        refill_station_mask,
+        has_refill_station,
         # the repeat can be moved out into the scoring data
         scoring_data.footfall_vector[np.newaxis, :].repeat(len(solution), axis=0),
         0,
@@ -189,4 +197,4 @@ def score_vectorized(
 
     score = (total_co2 * general_data.co2_price + total_earnings) * (1 + total_footfall)
 
-    return score
+    return score.round(0)

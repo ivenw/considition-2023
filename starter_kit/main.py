@@ -81,9 +81,9 @@ def main():
                 name = location[LK.locationName]
 
                 location[LK.salesVolume]
-                if True:
+                if location[LK.salesVolume] > 100:
                     solution[LK.locations][name] = {
-                        LK.f9100Count: 0,
+                        LK.f9100Count: 3,
                         LK.f3100Count: 1,
                     }
             # ----------------End of player code--------------------------

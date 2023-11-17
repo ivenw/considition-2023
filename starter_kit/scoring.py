@@ -122,10 +122,8 @@ def calculateScore(mapName: str, solution, mapEntity, generalData):
         scoredSolution[SK.totalRevenue] - scoredSolution[SK.totalLeasingCost]
     )
 
-    print("revenue", scoredSolution[SK.totalRevenue])
     print("leasing", scoredSolution[SK.totalLeasingCost])
     print("earnings", scoredSolution[SK.gameScore][SK.earnings])
-    print("co2_savings", scoredSolution[SK.gameScore][SK.co2Savings])
 
     scoredSolution[SK.gameScore][SK.total] = round(
         (
@@ -171,6 +169,9 @@ def distributeSales(with_, without, generalData):
                 with_[key_with_][CK.longitude],
             )
             if distance < generalData[GK.willingnessToTravelInMeters]:
+                print(loc_without[LK.locationName])
+                print(with_[key_with_][LK.locationName])
+                print(distance)
                 distributeSalesTo[with_[key_with_][LK.locationName]] = distance
 
         total = 0
@@ -184,14 +185,23 @@ def distributeSales(with_, without, generalData):
                     )
                     - 1
                 )
+                print(distributeSalesTo[key_temp])
                 total += distributeSalesTo[key_temp]
 
             for key_temp in distributeSalesTo:
-                with_[key_temp][LK.salesVolume] += (
+                print(f"{total=}")
+                sales_volume = (
                     distributeSalesTo[key_temp]
                     / total
                     * generalData[GK.refillDistributionRate]
                     * loc_without[LK.salesVolume]
                 )
+                print(generalData[GK.refillDistributionRate])
+                print(loc_without[LK.salesVolume])
+                print(
+                    generalData[GK.refillDistributionRate] * loc_without[LK.salesVolume]
+                )
+                with_[key_temp][LK.salesVolume] += sales_volume
+                print(f"{sales_volume=}")
 
     return with_

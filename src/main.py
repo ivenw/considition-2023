@@ -57,9 +57,9 @@ def naive_algo(locations: list[Location]) -> NDArray[np.uint32]:
     # should score 429409.0
     result = []
     for location in locations:
-        if True:
+        if location.sales_volume > 100:
             location.f3100_count = 1
-            location.f9100_count = 0
+            location.f9100_count = 3
         result.append([location.f3100_count, location.f9100_count])
 
     return np.array([result, result], dtype=np.uint32)
@@ -84,55 +84,57 @@ def on_generation(ga_instance: pygad.GA):
         )
 
 
-def fitness_func(
-    ga_instance: pygad.GA, solutions: NDArray[np.int32], solution_idx: NDArray[np.int32]
-):
-    del ga_instance
-    del solution_idx
-
-    mapped_solutions = GENE_TO_LOCATION_MAP[solutions]
-
-    result = mapped_solutions.sum(axis=2).sum(axis=1)
-
-    return result
-
-
 def main():
     locations = load_map_data(Path("data/vasteras.json"))
     general_data = load_general_data(Path("data/general.json"))
-    solution = naive_algo(locations)
-
-    # num_genes = len(locations)
-    #
-    # ga_instance = pygad.GA(
-    #     fitness_func=fitness_func,
-    #     on_generation=on_generation,
-    #     num_generations=NUM_GENERATIONS,
-    #     sol_per_pop=SOL_PER_POP,
-    #     fitness_batch_size=FITNESS_BATCH_SIZE,
-    #     num_parents_mating=NUM_PARENTS_MATING,
-    #     parent_selection_type=PARENT_SELECTION_TYPE,
-    #     # keep_parents=KEEP_PARENTS,
-    #     keep_parents=2,
-    #     crossover_type=CROSSOVER_TYPE,
-    #     mutation_type=MUTATION_TYPE,
-    #     mutation_percent_genes=MUTATION_PERCENT_GENES,
-    #     num_genes=num_genes,
-    #     gene_type=np.int32,  # type: ignore
-    #     gene_space=np.arange(0, 21, dtype=np.int32),
-    # )
-    # ga_instance.run()
-    #
-    # print(ga_instance.initial_population)
-    # print(ga_instance.population)
-    # print(ga_instance.best_solution())
-
     scoring_data = ScoringData.create(locations, general_data)
+    num_genes = len(locations)
+
+    def fitness_func(
+        ga_instance: pygad.GA,
+        solutions: NDArray[np.int32],
+        solution_idx: NDArray[np.int32],
+    ):
+        del ga_instance
+        del solution_idx
+
+        mapped_solutions = GENE_TO_LOCATION_MAP[solutions]
+
+        result = score_vectorized(
+            general_data,
+            scoring_data,
+            mapped_solutions,
+        )
+
+        return result
+
+    ga_instance = pygad.GA(
+        fitness_func=fitness_func,
+        on_generation=on_generation,
+        num_generations=NUM_GENERATIONS,
+        sol_per_pop=SOL_PER_POP,
+        fitness_batch_size=FITNESS_BATCH_SIZE,
+        num_parents_mating=NUM_PARENTS_MATING,
+        parent_selection_type=PARENT_SELECTION_TYPE,
+        # keep_parents=KEEP_PARENTS,
+        keep_parents=2,
+        crossover_type=CROSSOVER_TYPE,
+        mutation_type=MUTATION_TYPE,
+        mutation_percent_genes=MUTATION_PERCENT_GENES,
+        num_genes=num_genes,
+        gene_type=np.int32,  # type: ignore
+        gene_space=np.arange(0, 21, dtype=np.int32),
+    )
+    ga_instance.run()
+
+    print(ga_instance.initial_population)
+    print(ga_instance.population)
+    print(ga_instance.best_solution())
 
     total_score = score_vectorized(
         general_data,
         scoring_data,
-        solution,
+        ga_instance.best_solution()[0],
     )
     print(f"Total score, vectorized: {total_score}")
 

@@ -33,6 +33,7 @@ class GeneralData:
     refill_co2_per_unit: float
     refill_profit_per_unit: float
     refill_sales_factor: float
+    refill_distribution_rate: float
     wiling_to_travel: float
     exp_distribution_factor: float
 
@@ -89,6 +90,7 @@ def load_general_data(json_file: Path) -> GeneralData:
             GeneralKeys.profitPerUnit
         ],
         refill_sales_factor=general_data[GeneralKeys.refillSalesFactor],
+        refill_distribution_rate=general_data[GeneralKeys.refillDistributionRate],
         wiling_to_travel=general_data[GeneralKeys.willingnessToTravelInMeters],
         exp_distribution_factor=general_data[
             GeneralKeys.constantExpDistributionFunction
