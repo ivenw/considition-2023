@@ -79,7 +79,7 @@ def create_redistributed_sales_vector(
     location_matrix *= sales_volume_vector
     result = location_matrix.sum(axis=1)
 
-    return result
+    return sales_volume_vector
 
 
 def create_sales_capacity_vector(general_data: GeneralData) -> NDArray[np.float32]:
@@ -124,41 +124,67 @@ def score_vectorized(
     scoring_data: ScoringData,
     solution: NDArray[np.uint32],
 ):
+    refill_station_mask = location_has_refill_station(solution)
+
     sales_capacity = np.sum(solution * scoring_data.sales_capacity_vector, axis=2)
+    print(f"{sales_capacity=}")
+    # sales volumen not correct
     sales_volume = (
-        np.where(
-            location_has_refill_station(solution),
-            scoring_data.redistributed_sales_vector[np.newaxis, :].repeat(
-                len(solution), axis=0
-            ),
-            0,
-        )
-        .round(0)
-        .clip(0, sales_capacity)
+        # np.where(
+        #     refill_station_mask,
+        #     # the repeat can be moved out into the scoring data
+        #     scoring_data.redistributed_sales_vector[np.newaxis, :].repeat(
+        #         len(solution), axis=0
+        #     ),
+        #     0,
+        # )
+        scoring_data.redistributed_sales_vector.round(0).clip(0, sales_capacity)
     )
-    revenue = sales_volume * general_data.refill_profit_per_unit
-    leasing_cost = np.sum(solution * scoring_data.leasing_cost_vector, axis=2)
-    earnings = revenue - leasing_cost
-    total_earnings = np.sum(earnings, axis=1)
+    # print(scoring_data.redistributed_sales_vector)
+    print(f"{sales_volume=}")
 
-    co2_produced = np.sum(solution * scoring_data.co2_produced_vector, axis=2)
-    total_co2_produced = np.sum(co2_produced, axis=1)
-    co2_savings = (
-        sales_volume
-        * (general_data.classic_co2_per_unit - general_data.refill_co2_per_unit)
-        / 1_000
+    # revune not yet correct, over counting
+    total_revenue = (sales_volume * general_data.refill_profit_per_unit).sum(axis=1)
+    print(f"{total_revenue=}")
+
+    total_leasing_cost = (
+        (solution * scoring_data.leasing_cost_vector).sum(axis=2).sum(axis=1)
     )
-    total_co2_savings = np.sum(co2_savings, axis=1)
-    total_co2_savings_adjusted = total_co2_savings - total_co2_produced
+    print(f"{total_leasing_cost=}")
 
-    total_footfall = scoring_data.footfall_vector.sum()
-
-    print(f"{total_footfall=}")
-    print(f"{total_co2_savings_adjusted=}")
+    total_earnings = total_revenue - total_leasing_cost
     print(f"{total_earnings=}")
 
-    score = (total_co2_savings_adjusted * general_data.co2_price + total_earnings) * (
-        1 + total_footfall
+    total_co2_produced = (
+        (solution * scoring_data.co2_produced_vector / 1_000)
+        .sum(axis=2)
+        .sum(axis=1)
+        .round(0)
     )
+    print(f"{total_co2_produced=}")
+
+    # co2 savings not yet correct, over counting
+    total_co2_savings = (
+        (
+            sales_volume
+            * (general_data.classic_co2_per_unit - general_data.refill_co2_per_unit)
+            / 1_000
+        )
+        .sum(axis=1)
+        .round()
+    )
+    print(f"{total_co2_savings=}")
+
+    total_co2 = total_co2_savings - total_co2_produced
+    print(f"{total_co2=}")
+
+    total_footfall = np.where(
+        refill_station_mask,
+        # the repeat can be moved out into the scoring data
+        scoring_data.footfall_vector[np.newaxis, :].repeat(len(solution), axis=0),
+        0,
+    ).sum(axis=1)
+
+    score = (total_co2 * general_data.co2_price + total_earnings) * (1 + total_footfall)
 
     return score

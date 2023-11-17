@@ -1,5 +1,4 @@
 import math
-from typing import Dict
 import uuid
 from src.data_keys import (
     LocationKeys as LK,
@@ -122,6 +121,11 @@ def calculateScore(mapName: str, solution, mapEntity, generalData):
     scoredSolution[SK.gameScore][SK.earnings] = (
         scoredSolution[SK.totalRevenue] - scoredSolution[SK.totalLeasingCost]
     )
+
+    print("revenue", scoredSolution[SK.totalRevenue])
+    print("leasing", scoredSolution[SK.totalLeasingCost])
+    print("earnings", scoredSolution[SK.gameScore][SK.earnings])
+    print("co2_savings", scoredSolution[SK.gameScore][SK.co2Savings])
 
     scoredSolution[SK.gameScore][SK.total] = round(
         (

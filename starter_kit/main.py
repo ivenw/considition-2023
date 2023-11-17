@@ -1,13 +1,12 @@
 import os
 import json
 from starter_kit.scoring import calculateScore
-from src.api import getGeneralData, getMapData, submit
+from src.api import getGeneralData, getMapData
 from src.data_keys import (
     MapNames as MN,
     LocationKeys as LK,
     ScoringKeys as SK,
 )
-from time import perf_counter_ns
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -22,7 +21,7 @@ def main():
 
     try:
         apiKey = os.environ["apiKey"]
-    except Exception as e:
+    except Exception:
         raise SystemExit("Did you forget to create a .env file with the apiKey?")
 
     # User selct a map name
@@ -81,7 +80,7 @@ def main():
                 location = mapEntity[LK.locations][key]
                 name = location[LK.locationName]
 
-                salesVolume = location[LK.salesVolume]
+                location[LK.salesVolume]
                 if True:
                     solution[LK.locations][name] = {
                         LK.f9100Count: 0,
