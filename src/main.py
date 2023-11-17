@@ -13,6 +13,7 @@ from src.scoring import (
 )
 from src.data_keys import (
     LocationKeys as LK,
+    ScoringKeys,
 )
 from src.data_keys import (
     MapNames as MN,
@@ -163,7 +164,11 @@ def main():
             LK.f9100Count: a[1],
         }
 
-    submit(map_name, solution, api_key)
+    scored_solution = submit(map_name, solution, api_key)
+    if scored_solution:
+        print("Successfully submitted game")
+        print(f"id: {scored_solution[ScoringKeys.gameId]}")
+        print(f"Score: {scored_solution[ScoringKeys.gameScore]}")
 
 
 if __name__ == "__main__":
