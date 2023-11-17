@@ -11,9 +11,22 @@ from src.scoring import (
     ScoringData,
     score_vectorized,
 )
+from src.data_keys import (
+    LocationKeys as LK,
+)
+from src.data_keys import (
+    MapNames as MN,
+)
+from src.data_keys import (
+    ScoringKeys as SK,
+)
+import os
+from src.api import submit, getMapData
 
 
-NUM_GENERATIONS = 1_000
+UPLOAD = True
+
+NUM_GENERATIONS = 1_0
 SOL_PER_POP = 1_000
 FITNESS_BATCH_SIZE = SOL_PER_POP
 
@@ -85,7 +98,7 @@ def on_generation(ga_instance: pygad.GA):
 
 
 def main():
-    locations = load_map_data(Path("data/vasteras.json"))
+    locations, map_name = load_map_data(Path("data/vasteras.json"))
     general_data = load_general_data(Path("data/general.json"))
     scoring_data = ScoringData.create(locations, general_data)
     num_genes = len(locations)
@@ -131,12 +144,26 @@ def main():
     print(ga_instance.population)
     print(ga_instance.best_solution())
 
-    total_score = score_vectorized(
-        general_data,
-        scoring_data,
-        ga_instance.best_solution()[0],
-    )
-    print(f"Total score, vectorized: {total_score}")
+    # print(GENE_TO_LOCATION_MAP[ga_instance.best_solution()[0]])
+
+    if not UPLOAD:
+        return
+
+    api_key = os.environ["apiKey"]
+    solution_array = GENE_TO_LOCATION_MAP[ga_instance.best_solution()[0]]
+    solution = {LK.locations: {}}
+
+    mapEntity = getMapData(map_name, api_key)
+    for key, a in zip(mapEntity[LK.locations], solution_array):
+        location = mapEntity[LK.locations][key]
+        name = location[LK.locationName]
+
+        solution[LK.locations][name] = {
+            LK.f3100Count: a[0],
+            LK.f9100Count: a[1],
+        }
+
+    submit(map_name, solution, api_key)
 
 
 if __name__ == "__main__":

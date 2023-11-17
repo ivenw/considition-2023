@@ -2,7 +2,7 @@ from pathlib import Path
 import json
 
 from dataclasses import dataclass
-from data_keys import LocationKeys, CoordinateKeys, GeneralKeys
+from data_keys import LocationKeys, CoordinateKeys, GeneralKeys, ScoringKeys
 
 
 @dataclass
@@ -38,7 +38,7 @@ class GeneralData:
     exp_distribution_factor: float
 
 
-def load_map_data(json_file: Path) -> list[Location]:
+def load_map_data(json_file: Path) -> tuple[list[Location], str]:
     result = []
 
     with open(json_file, "r", encoding="utf8") as f:
@@ -57,7 +57,7 @@ def load_map_data(json_file: Path) -> list[Location]:
         )
         result.append(location)
 
-    return result
+    return result, map_data[ScoringKeys.mapName]
 
 
 def load_general_data(json_file: Path) -> GeneralData:

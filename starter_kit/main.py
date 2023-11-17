@@ -1,13 +1,20 @@
-import os
 import json
-from starter_kit.scoring import calculateScore
+import os
+
+import numpy as np
+from dotenv import load_dotenv
+
 from src.api import getGeneralData, getMapData
 from src.data_keys import (
-    MapNames as MN,
     LocationKeys as LK,
+)
+from src.data_keys import (
+    MapNames as MN,
+)
+from src.data_keys import (
     ScoringKeys as SK,
 )
-from dotenv import load_dotenv
+from starter_kit.scoring import calculateScore
 
 load_dotenv()
 apiKey = os.environ["apiKey"]
@@ -76,16 +83,19 @@ def main():
             # ----------------Player Algorithm goes here------------------
             solution = {LK.locations: {}}
 
-            for key in mapEntity[LK.locations]:
+            for key, a, b in zip(mapEntity[LK.locations], array):
                 location = mapEntity[LK.locations][key]
                 name = location[LK.locationName]
 
-                location[LK.salesVolume]
-                if location[LK.salesVolume] > 100:
-                    solution[LK.locations][name] = {
-                        LK.f9100Count: 3,
-                        LK.f3100Count: 1,
-                    }
+                solution[LK.locations][name] = {
+                    LK.f3100Count: a,
+                    LK.f9100Count: b,
+                }
+                # if location[LK.salesVolume] > 100:
+                #     solution[LK.locations][name] = {
+                #         LK.f9100Count: 3,
+                #         LK.f3100Count: 1,
+                #     }
             # ----------------End of player code--------------------------
             # ------------------------------------------------------------
 
