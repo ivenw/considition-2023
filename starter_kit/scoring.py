@@ -169,9 +169,6 @@ def distributeSales(with_, without, generalData):
                 with_[key_with_][CK.longitude],
             )
             if distance < generalData[GK.willingnessToTravelInMeters]:
-                print(loc_without[LK.locationName])
-                print(with_[key_with_][LK.locationName])
-                print(distance)
                 distributeSalesTo[with_[key_with_][LK.locationName]] = distance
 
         total = 0
@@ -185,23 +182,15 @@ def distributeSales(with_, without, generalData):
                     )
                     - 1
                 )
-                print(distributeSalesTo[key_temp])
                 total += distributeSalesTo[key_temp]
 
             for key_temp in distributeSalesTo:
-                print(f"{total=}")
                 sales_volume = (
                     distributeSalesTo[key_temp]
                     / total
                     * generalData[GK.refillDistributionRate]
                     * loc_without[LK.salesVolume]
                 )
-                print(generalData[GK.refillDistributionRate])
-                print(loc_without[LK.salesVolume])
-                print(
-                    generalData[GK.refillDistributionRate] * loc_without[LK.salesVolume]
-                )
                 with_[key_temp][LK.salesVolume] += sales_volume
-                print(f"{sales_volume=}")
 
     return with_

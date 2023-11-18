@@ -29,8 +29,8 @@ from starter_kit.scoring import calculateScore
 
 UPLOAD = True
 
-NUM_GENERATIONS = 1_0
-SOL_PER_POP = 2_000
+NUM_GENERATIONS = 5_000
+SOL_PER_POP = 5_000
 FITNESS_BATCH_SIZE = SOL_PER_POP
 
 NUM_PARENTS_MATING = 4
@@ -44,6 +44,7 @@ MUTATION_PERCENT_GENES = 10
 
 GENE_TO_LOCATION_MAP = np.array(
     [
+        (0, 0),
         (0, 1),
         (0, 2),
         (1, 0),
@@ -125,7 +126,7 @@ def main():
         mutation_percent_genes=MUTATION_PERCENT_GENES,
         num_genes=num_genes,
         gene_type=np.int32,  # type: ignore
-        gene_space=np.arange(0, 8, dtype=np.int32),
+        gene_space=np.arange(0, 9, dtype=np.int32),
     )
     ga_instance.run()
 
@@ -150,6 +151,13 @@ def main():
             LK.f9100Count: int(a[1]),
         }
 
+    # filter solutions for any locations that don't contain any f3100 or f9100
+    solution[LK.locations] = {
+        key: value
+        for key, value in solution[LK.locations].items()
+        if value[LK.f3100Count] > 0 or value[LK.f9100Count] > 0
+    }
+
     score = calculateScore(map_name, solution, mapEntity, generalData)
 
     id_ = score[SK.gameId]
@@ -158,14 +166,6 @@ def main():
     print(f"CO2: {score[SK.gameScore][SK.co2Savings]}")
     print(f"Footfall: {score[SK.gameScore][SK.totalFootfall]}")
     print(f"Revenue: {score[SK.totalRevenue]}")
-
-    print(np.arange(0, 9, dtype=np.int32))
-
-    print(solution_array)
-    test = [
-        v[LK.f3100Count] + v[LK.f9100Count] for v in solution[LK.locations].values()
-    ]
-    print(test)
 
     if not UPLOAD:
         return
