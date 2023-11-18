@@ -28,7 +28,7 @@ from src.api import submit, getMapData
 UPLOAD = True
 
 NUM_GENERATIONS = 1_0
-SOL_PER_POP = 1_000
+SOL_PER_POP = 2_000
 FITNESS_BATCH_SIZE = SOL_PER_POP
 
 NUM_PARENTS_MATING = 4
@@ -43,26 +43,14 @@ MUTATION_PERCENT_GENES = 10
 GENE_TO_LOCATION_MAP = np.array(
     [
         (0, 0),
-        (1, 0),
-        (2, 0),
-        (3, 0),
-        (4, 0),
-        (5, 0),
         (0, 1),
-        (1, 1),
-        (2, 1),
-        (3, 1),
-        (4, 1),
         (0, 2),
+        (1, 0),
+        (1, 1),
         (1, 2),
+        (2, 0),
+        (2, 1),
         (2, 2),
-        (3, 2),
-        (0, 3),
-        (1, 3),
-        (2, 3),
-        (0, 4),
-        (1, 4),
-        (0, 5),
     ]
 )
 
@@ -130,14 +118,13 @@ def main():
         fitness_batch_size=FITNESS_BATCH_SIZE,
         num_parents_mating=NUM_PARENTS_MATING,
         parent_selection_type=PARENT_SELECTION_TYPE,
-        # keep_parents=KEEP_PARENTS,
-        keep_parents=2,
+        keep_elitism=KEEP_PARENTS,
         crossover_type=CROSSOVER_TYPE,
         mutation_type=MUTATION_TYPE,
         mutation_percent_genes=MUTATION_PERCENT_GENES,
         num_genes=num_genes,
         gene_type=np.int32,  # type: ignore
-        gene_space=np.arange(0, 21, dtype=np.int32),
+        gene_space=np.arange(0, 9, dtype=np.int32),
     )
     ga_instance.run()
 
@@ -152,17 +139,24 @@ def main():
 
     api_key = os.environ["apiKey"]
     solution_array = GENE_TO_LOCATION_MAP[ga_instance.best_solution()[0]]
-    solution = {LK.locations: {}}
-
     mapEntity = getMapData(map_name, api_key)
+
+    solution = {LK.locations: {}}
     for key, a in zip(mapEntity[LK.locations], solution_array):
         location = mapEntity[LK.locations][key]
         name = location[LK.locationName]
 
         solution[LK.locations][name] = {
-            LK.f3100Count: a[0],
-            LK.f9100Count: a[1],
+            LK.f3100Count: int(a[0]),
+            LK.f9100Count: int(a[1]),
         }
+
+    print(np.arange(0, 9, dtype=np.int32))
+
+    test = [
+        v[LK.f3100Count] + v[LK.f9100Count] for v in solution[LK.locations].values()
+    ]
+    print(test)
 
     scored_solution = submit(map_name, solution, api_key)
     if scored_solution:

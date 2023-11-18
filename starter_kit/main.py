@@ -4,7 +4,7 @@ import os
 import numpy as np
 from dotenv import load_dotenv
 
-from src.api import getGeneralData, getMapData
+from src.api import getGeneralData, getMapData, submit
 from src.data_keys import (
     LocationKeys as LK,
 )
@@ -83,13 +83,13 @@ def main():
             # ----------------Player Algorithm goes here------------------
             solution = {LK.locations: {}}
 
-            for key, a, b in zip(mapEntity[LK.locations], array):
+            for key in mapEntity[LK.locations]:
                 location = mapEntity[LK.locations][key]
                 name = location[LK.locationName]
 
                 solution[LK.locations][name] = {
-                    LK.f3100Count: a,
-                    LK.f9100Count: b,
+                    LK.f3100Count: 1,
+                    LK.f9100Count: 0,
                 }
                 # if location[LK.salesVolume] > 100:
                 #     solution[LK.locations][name] = {
@@ -101,18 +101,14 @@ def main():
 
             # Score solution locally
 
-            # solution = {
-            #     LK.locations: {"location1": {LK.f9100Count: 0, LK.f3100Count: 1}}
-            # }
-
-            score = calculateScore(mapName, solution, mapEntity, generalData)
-
-            id_ = score[SK.gameId]
-            print(f"Storing  game with id {id_}.")
-            print(f"Score: {score[SK.gameScore][SK.total]}")
-            print(f"CO2: {score[SK.gameScore][SK.co2Savings]}")
-            print(f"Footfall: {score[SK.gameScore][SK.totalFootfall]}")
-            print(f"Revenue: {score[SK.totalRevenue]}")
+            # score = calculateScore(mapName, solution, mapEntity, generalData)
+            #
+            # id_ = score[SK.gameId]
+            # print(f"Storing  game with id {id_}.")
+            # print(f"Score: {score[SK.gameScore][SK.total]}")
+            # print(f"CO2: {score[SK.gameScore][SK.co2Savings]}")
+            # print(f"Footfall: {score[SK.gameScore][SK.totalFootfall]}")
+            # print(f"Revenue: {score[SK.totalRevenue]}")
 
             # print(f"Enter {id_} into visualization.ipynb for local vizualization ")
 
@@ -121,13 +117,14 @@ def main():
             #     json.dump(score, f, indent=4)
 
             # Submit and and get score from Considition app
-            # print(f"Submitting solution to Considtion 2023 \n")
-            #
-            # scoredSolution = submit(mapName, solution, apiKey)
-            # if scoredSolution:
-            #     print("Successfully submitted game")
-            #     print(f"id: {scoredSolution[SK.gameId]}")
-            #     print(f"Score: {scoredSolution[SK.gameScore]}")
+            print(f"Submitting solution to Considtion 2023 \n")
+
+            print(solution)
+            scoredSolution = submit(mapName, solution, apiKey)
+            if scoredSolution:
+                print("Successfully submitted game")
+                print(f"id: {scoredSolution[SK.gameId]}")
+                print(f"Score: {scoredSolution[SK.gameScore]}")
 
 
 if __name__ == "__main__":

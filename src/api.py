@@ -44,15 +44,13 @@ def getGame(id_):
 
 
 def submit(mapName: str, solution, apiKey):
-    try:
-        resp = requests.post(
-            f"{domain}/api/Game/submitSolution?mapName={mapName}",
-            headers={"x-api-key": apiKey},
-            json=solution,
-        )
-        resp.raise_for_status()
-    except:
-        print(resp)
-        return None
-    else:
-        return resp.json()
+    url = f"{domain}/api/Game/submitSolution?mapName={mapName}"
+    print(url)
+    resp = requests.post(
+        url,
+        headers={"x-api-key": apiKey},
+        json=solution,
+    )
+    resp.raise_for_status()
+    print(resp)
+    return resp.json()
