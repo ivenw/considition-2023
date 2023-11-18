@@ -1,29 +1,31 @@
+import os
 from pathlib import Path
 from time import perf_counter_ns
-from typing import Callable, Any
+from typing import Any, Callable
 
 import numpy as np
 import pygad
 from numpy.typing import NDArray
 
-from src.data_loading import Location, load_general_data, load_map_data
-from src.scoring import (
-    ScoringData,
-    score_vectorized,
-)
+from src.api import getGeneralData, getMapData, submit
 from src.data_keys import (
     LocationKeys as LK,
-    ScoringKeys,
 )
 from src.data_keys import (
     MapNames as MN,
 )
 from src.data_keys import (
+    ScoringKeys,
+)
+from src.data_keys import (
     ScoringKeys as SK,
 )
-import os
-from src.api import submit, getMapData
-
+from src.data_loading import Location, load_general_data, load_map_data
+from src.scoring import (
+    ScoringData,
+    score_vectorized,
+)
+from starter_kit.scoring import calculateScore
 
 UPLOAD = True
 
@@ -42,7 +44,6 @@ MUTATION_PERCENT_GENES = 10
 
 GENE_TO_LOCATION_MAP = np.array(
     [
-        (0, 0),
         (0, 1),
         (0, 2),
         (1, 0),
@@ -124,7 +125,7 @@ def main():
         mutation_percent_genes=MUTATION_PERCENT_GENES,
         num_genes=num_genes,
         gene_type=np.int32,  # type: ignore
-        gene_space=np.arange(0, 9, dtype=np.int32),
+        gene_space=np.arange(0, 8, dtype=np.int32),
     )
     ga_instance.run()
 
@@ -134,12 +135,10 @@ def main():
 
     # print(GENE_TO_LOCATION_MAP[ga_instance.best_solution()[0]])
 
-    if not UPLOAD:
-        return
-
     api_key = os.environ["apiKey"]
     solution_array = GENE_TO_LOCATION_MAP[ga_instance.best_solution()[0]]
     mapEntity = getMapData(map_name, api_key)
+    generalData = getGeneralData()
 
     solution = {LK.locations: {}}
     for key, a in zip(mapEntity[LK.locations], solution_array):
@@ -151,13 +150,25 @@ def main():
             LK.f9100Count: int(a[1]),
         }
 
+    score = calculateScore(map_name, solution, mapEntity, generalData)
+
+    id_ = score[SK.gameId]
+    print(f"Storing  game with id {id_}.")
+    print(f"Score: {score[SK.gameScore][SK.total]}")
+    print(f"CO2: {score[SK.gameScore][SK.co2Savings]}")
+    print(f"Footfall: {score[SK.gameScore][SK.totalFootfall]}")
+    print(f"Revenue: {score[SK.totalRevenue]}")
+
     print(np.arange(0, 9, dtype=np.int32))
 
+    print(solution_array)
     test = [
         v[LK.f3100Count] + v[LK.f9100Count] for v in solution[LK.locations].values()
     ]
     print(test)
 
+    if not UPLOAD:
+        return
     scored_solution = submit(map_name, solution, api_key)
     if scored_solution:
         print("Successfully submitted game")
