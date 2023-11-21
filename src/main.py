@@ -1,7 +1,10 @@
 import os
 from pathlib import Path
 from time import perf_counter_ns
+import time
 from typing import Any, Callable
+import concurrent.futures
+import multiprocessing as mp
 
 import numpy as np
 import pygad
@@ -28,10 +31,13 @@ from src.scoring import (
 from starter_kit.scoring import calculateScore
 
 UPLOAD = True
+MAX_PROCESSES = int(mp.cpu_count()/2)
 
-NUM_GENERATIONS = 5_000
-SOL_PER_POP = 5_000
+
+NUM_GENERATIONS = 1000
+SOL_PER_POP = 1000
 FITNESS_BATCH_SIZE = SOL_PER_POP
+
 
 NUM_PARENTS_MATING = 4
 PARENT_SELECTION_TYPE = "sss"
@@ -55,6 +61,13 @@ GENE_TO_LOCATION_MAP = np.array(
         (2, 2),
     ]
 )
+
+map_name = "goteborg"
+
+locations, map_name = load_map_data(Path(f"data/{map_name}.json"))
+general_data = load_general_data(Path("data/general.json"))
+scoring_data = ScoringData.create(locations, general_data)
+num_genes = len(locations)
 
 
 def naive_algo(locations: list[Location]) -> NDArray[np.uint32]:
@@ -88,56 +101,97 @@ def on_generation(ga_instance: pygad.GA):
         )
 
 
-def main():
-    locations, map_name = load_map_data(Path("data/vasteras.json"))
-    general_data = load_general_data(Path("data/general.json"))
-    scoring_data = ScoringData.create(locations, general_data)
-    num_genes = len(locations)
+def fitness_func(
+    ga_instance: pygad.GA,
+    solutions: NDArray[np.int32],
+    solution_idx: NDArray[np.int32],
+):
+    del ga_instance
+    del solution_idx
 
-    def fitness_func(
-        ga_instance: pygad.GA,
-        solutions: NDArray[np.int32],
-        solution_idx: NDArray[np.int32],
-    ):
-        del ga_instance
-        del solution_idx
+    mapped_solutions = GENE_TO_LOCATION_MAP[solutions]
 
-        mapped_solutions = GENE_TO_LOCATION_MAP[solutions]
-
-        result = score_vectorized(
-            general_data,
-            scoring_data,
-            mapped_solutions,
-        )
-
-        return result
-
-    ga_instance = pygad.GA(
-        fitness_func=fitness_func,
-        on_generation=on_generation,
-        num_generations=NUM_GENERATIONS,
-        sol_per_pop=SOL_PER_POP,
-        fitness_batch_size=FITNESS_BATCH_SIZE,
-        num_parents_mating=NUM_PARENTS_MATING,
-        parent_selection_type=PARENT_SELECTION_TYPE,
-        keep_elitism=KEEP_PARENTS,
-        crossover_type=CROSSOVER_TYPE,
-        mutation_type=MUTATION_TYPE,
-        mutation_percent_genes=MUTATION_PERCENT_GENES,
-        num_genes=num_genes,
-        gene_type=np.int32,  # type: ignore
-        gene_space=np.arange(0, 9, dtype=np.int32),
+    result = score_vectorized(
+        general_data,
+        scoring_data,
+        mapped_solutions,
     )
+
+    return result
+
+
+def run_ga_instance(ga_instance: pygad.GA):
     ga_instance.run()
+    return ga_instance
 
-    print(ga_instance.initial_population)
-    print(ga_instance.population)
-    print(ga_instance.best_solution())
 
-    # print(GENE_TO_LOCATION_MAP[ga_instance.best_solution()[0]])
+def save_best_pop_and_sol(map_name: str, best_ga_instance: pygad.GA):
+    best_solution = best_ga_instance.best_solution()
+
+    if not os.path.exists(Path("./best_populations/")):
+        os.mkdir(Path("./best_populations/"))
+    if not os.path.exists(Path("./best_solutions/")):
+        os.mkdir(Path("./best_solutions/"))
+
+    print("Saving best population...")
+    np.save(
+        os.path.abspath(
+            Path(
+                f"best_populations/{map_name}_{best_ga_instance.population.shape[0]}.npy"
+            )
+        ),
+        best_ga_instance.population,
+    )
+    print("Saving best solution...")
+    np.save(
+        os.path.abspath(
+            Path(f"best_solutions/{map_name}_{time.time_ns()}_{best_solution[1]}.npy")
+        ),
+        best_solution[0],
+    )
+
+
+def main():
+    # Create number of instances of the GA class
+    ga_instances = [
+        pygad.GA(
+            fitness_func=fitness_func,
+            on_generation=on_generation,
+            num_generations=NUM_GENERATIONS,
+            sol_per_pop=SOL_PER_POP,
+            fitness_batch_size=FITNESS_BATCH_SIZE,
+            num_parents_mating=NUM_PARENTS_MATING,
+            parent_selection_type=PARENT_SELECTION_TYPE,
+            keep_elitism=KEEP_PARENTS,
+            crossover_type=CROSSOVER_TYPE,
+            mutation_type=MUTATION_TYPE,
+            mutation_percent_genes=MUTATION_PERCENT_GENES,
+            num_genes=num_genes,
+            gene_type=np.int32,  # type: ignore
+            gene_space=np.arange(0, 9, dtype=np.int32),
+        )
+        for _ in range(MAX_PROCESSES)
+    ]
+
+    with concurrent.futures.ProcessPoolExecutor(max_workers=MAX_PROCESSES) as executor:
+        ga_instances = [
+            executor.submit(run_ga_instance, ga_instance)
+            for ga_instance in ga_instances
+        ]
+
+        best_score = 0
+        for future in concurrent.futures.as_completed(ga_instances):
+            ga_instance = future.result()
+            # Get the best solution from all runs
+            current_score = ga_instance.best_solution()[1]
+            if best_score < current_score:
+                best_score = current_score
+                best_ga_instance = ga_instance
+
+    save_best_pop_and_sol(map_name, best_ga_instance)
 
     api_key = os.environ["apiKey"]
-    solution_array = GENE_TO_LOCATION_MAP[ga_instance.best_solution()[0]]
+    solution_array = GENE_TO_LOCATION_MAP[best_ga_instance.best_solution()[0]]
     mapEntity = getMapData(map_name, api_key)
     generalData = getGeneralData()
 
