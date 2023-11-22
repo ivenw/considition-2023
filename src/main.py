@@ -30,14 +30,14 @@ from src.scoring import (
 )
 from starter_kit.scoring import calculateScore
 
-UPLOAD = False
+UPLOAD = True
 MAX_PROCESSES = int(mp.cpu_count()/2)
 
-PRELOAD = True # set to false to run GA from scratch
+PRELOAD = False # set to false to run GA from scratch
 
 
-NUM_GENERATIONS = 50
-SOL_PER_POP = 500  # Should always be divisible by 100
+NUM_GENERATIONS = 100
+SOL_PER_POP = 2000  # Should always be divisible by 100
 assert SOL_PER_POP % 100 == 0, "SOL_PER_POP must be divisible by 100"
 FITNESS_BATCH_SIZE = SOL_PER_POP
 
@@ -74,12 +74,14 @@ num_genes = len(locations)
 
 
 def naive_algo(locations: list[Location]) -> NDArray[np.uint32]:
-    # should score 429409.0
+    # should score 2184.15 on uppsala
     result = []
     for location in locations:
         if location.sales_volume > 100:
-            location.f3100_count = 1
-            location.f9100_count = 3
+            location.f3100_count = 0
+            location.f9100_count = 1
+        # at what index in GENE_LOCATION_MAP is this location?
+        
         result.append([location.f3100_count, location.f9100_count])
 
     return np.array([result, result], dtype=np.uint32)
@@ -191,6 +193,12 @@ def preload_population(map_name: str) -> tuple[np.ndarray, int]:
 
 
 def main():
+    #solution = naive_algo(locations)
+    #score = score_vectorized(general_data, scoring_data, solution)
+    #print(f"Naive solution score: {score}")
+    #return
+
+
     if PRELOAD:
         best_population = preload_population(map_name)
         if best_population is not None:

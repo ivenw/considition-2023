@@ -167,7 +167,7 @@ def score_vectorized(
         (solution * scoring_data.leasing_cost_vector).sum(axis=2).sum(axis=1)
     )
 
-    total_earnings = total_revenue - total_leasing_cost
+    total_earnings = (total_revenue - total_leasing_cost) / 1_000
 
     total_co2_produced = (
         (solution * scoring_data.co2_produced_vector / 1_000)
@@ -175,11 +175,15 @@ def score_vectorized(
         .sum(axis=1)
         .round(0)
     )
-
+    
+    
     total_co2_savings = (
         (
-            sales_volume
+            (sales_volume
             * (general_data.classic_co2_per_unit - general_data.refill_co2_per_unit)
+            - solution[:,:,0] * general_data.f3100_co2
+            - solution[:,:,1] * general_data.f9100_co2
+            )
             / 1_000
         )
         .sum(axis=1)
@@ -193,8 +197,8 @@ def score_vectorized(
         # the repeat can be moved out into the scoring data
         scoring_data.footfall_vector[np.newaxis, :].repeat(len(solution), axis=0),
         0,
-    ).sum(axis=1)
+    ).sum(axis=1) / 1_000
 
     score = (total_co2 * general_data.co2_price + total_earnings) * (1 + total_footfall)
 
-    return score.round(0)
+    return score.round(2)
