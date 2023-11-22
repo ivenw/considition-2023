@@ -30,12 +30,15 @@ from src.scoring import (
 )
 from starter_kit.scoring import calculateScore
 
-UPLOAD = True
+UPLOAD = False
 MAX_PROCESSES = int(mp.cpu_count()/2)
 
+PRELOAD = True # set to false to run GA from scratch
 
-NUM_GENERATIONS = 1000
-SOL_PER_POP = 1000
+
+NUM_GENERATIONS = 50
+SOL_PER_POP = 500  # Should always be divisible by 100
+assert SOL_PER_POP % 100 == 0, "SOL_PER_POP must be divisible by 100"
 FITNESS_BATCH_SIZE = SOL_PER_POP
 
 
@@ -128,16 +131,16 @@ def run_ga_instance(ga_instance: pygad.GA):
 def save_best_pop_and_sol(map_name: str, best_ga_instance: pygad.GA):
     best_solution = best_ga_instance.best_solution()
 
-    if not os.path.exists(Path("./best_populations/")):
+    if not Path("./best_populations/").exists():
         os.mkdir(Path("./best_populations/"))
-    if not os.path.exists(Path("./best_solutions/")):
+    if not Path("./best_solutions/").exists():
         os.mkdir(Path("./best_solutions/"))
 
     print("Saving best population...")
     np.save(
         os.path.abspath(
             Path(
-                f"best_populations/{map_name}_{best_ga_instance.population.shape[0]}.npy"
+                f"best_populations/{map_name}_{best_ga_instance.population.shape[0]}_{int(best_solution[1])}.npy"
             )
         ),
         best_ga_instance.population,
@@ -145,33 +148,93 @@ def save_best_pop_and_sol(map_name: str, best_ga_instance: pygad.GA):
     print("Saving best solution...")
     np.save(
         os.path.abspath(
-            Path(f"best_solutions/{map_name}_{time.time_ns()}_{best_solution[1]}.npy")
+            Path(
+                f"best_solutions/{map_name}_{time.time_ns()}_{int(best_solution[1])}.npy"
+            )
         ),
         best_solution[0],
     )
 
 
-def main():
-    # Create number of instances of the GA class
-    ga_instances = [
-        pygad.GA(
-            fitness_func=fitness_func,
-            on_generation=on_generation,
-            num_generations=NUM_GENERATIONS,
-            sol_per_pop=SOL_PER_POP,
-            fitness_batch_size=FITNESS_BATCH_SIZE,
-            num_parents_mating=NUM_PARENTS_MATING,
-            parent_selection_type=PARENT_SELECTION_TYPE,
-            keep_elitism=KEEP_PARENTS,
-            crossover_type=CROSSOVER_TYPE,
-            mutation_type=MUTATION_TYPE,
-            mutation_percent_genes=MUTATION_PERCENT_GENES,
-            num_genes=num_genes,
-            gene_type=np.int32,  # type: ignore
-            gene_space=np.arange(0, 9, dtype=np.int32),
-        )
-        for _ in range(MAX_PROCESSES)
+def preload_population(map_name: str) -> tuple[np.ndarray, int]:
+    if not os.path.exists(Path("./best_populations/")):
+        print("No best populations found")
+        return None
+
+    best_populations = [
+        file
+        for file in os.listdir(Path("./best_populations/"))
+        if file.startswith(map_name)
     ]
+
+    if not best_populations:
+        print("No best populations found")
+        return None
+
+    best_populations.sort(
+        key=lambda x: int(x.split("_")[-1].split(".")[0]), reverse=True
+    )
+    best_population = best_populations[0]
+    print(f"Loading best population {best_population}")
+    best_population = np.load(Path(f"./best_populations/{best_population}"))
+
+    print(best_population)
+    if best_population.shape[0] != SOL_PER_POP:
+        print(
+            f"Best population shape {best_population.shape[0]} does not match SOL_PER_POP {SOL_PER_POP}, repeating best population"
+        )
+        best_population = np.repeat(
+            best_population, SOL_PER_POP / best_population.shape[0], axis=0
+        )
+
+    return best_population
+
+
+def main():
+    if PRELOAD:
+        best_population = preload_population(map_name)
+        if best_population is not None:
+            ga_instances = [
+                pygad.GA(
+                    fitness_func=fitness_func,
+                    on_generation=on_generation,
+                    num_generations=NUM_GENERATIONS,
+                    sol_per_pop=SOL_PER_POP,
+                    fitness_batch_size=FITNESS_BATCH_SIZE,
+                    num_parents_mating=NUM_PARENTS_MATING,
+                    parent_selection_type=PARENT_SELECTION_TYPE,
+                    keep_elitism=KEEP_PARENTS,
+                    crossover_type=CROSSOVER_TYPE,
+                    mutation_type=MUTATION_TYPE,
+                    mutation_percent_genes=MUTATION_PERCENT_GENES,
+                    num_genes=num_genes,
+                    initial_population=best_population,
+                    gene_type=np.int32,  # type: ignore
+                    gene_space=np.arange(0, 9, dtype=np.int32),
+                )
+                for _ in range(MAX_PROCESSES)
+            ]
+    else:
+        # Create number of instances of the GA class
+        ga_instances = [
+            pygad.GA(
+                fitness_func=fitness_func,
+                on_generation=on_generation,
+                num_generations=NUM_GENERATIONS,
+                sol_per_pop=SOL_PER_POP,
+                fitness_batch_size=FITNESS_BATCH_SIZE,
+                num_parents_mating=NUM_PARENTS_MATING,
+                parent_selection_type=PARENT_SELECTION_TYPE,
+                keep_elitism=KEEP_PARENTS,
+                crossover_type=CROSSOVER_TYPE,
+                mutation_type=MUTATION_TYPE,
+                mutation_percent_genes=MUTATION_PERCENT_GENES,
+                num_genes=num_genes,
+                gene_type=np.int32,  # type: ignore
+                gene_space=np.arange(0, 9, dtype=np.int32),
+            )
+            for _ in range(MAX_PROCESSES)
+        ]
 
     with concurrent.futures.ProcessPoolExecutor(max_workers=MAX_PROCESSES) as executor:
         ga_instances = [
